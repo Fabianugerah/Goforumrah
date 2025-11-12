@@ -1,0 +1,95 @@
+.search {
+    position: absolute;
+    width: 100%;
+    padding: 0 120px;
+    top: 379px;
+
+    &-box {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        color: $color-subtle;
+        background-color: $color-white;
+        border-radius: 1000px;
+        border: 1px solid $color-input;
+        box-shadow: 0px 12px 44px rgba(5, 44, 71, 0.05);
+        padding: 12px;
+        gap: 16px;
+        z-index: 999;
+    }
+
+    &-container {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        gap: 16px;
+
+        & > :not(:last-child) {
+            border-right: 1px solid $color-separator;
+        }
+    }
+
+    &-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 20px;
+
+        &--full {
+            flex: 2;
+        }
+
+        &--small {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+        }
+
+        &-wrapper {
+            min-width: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        &-input {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: $color-primary;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.5;
+            width: 100%;
+
+            &::placeholder {
+                font-size: 1.6rem;
+                color: $color-subtle;
+            }
+        }
+    }
+
+    &-btn {
+        padding: 20px 40px;
+        background-color: $color-toscha-01;
+        color: $color-white;
+        border-radius: 1000px;
+        border: none;
+    }
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  background-color: $color-separator;
+  border-radius: 50%;
+}

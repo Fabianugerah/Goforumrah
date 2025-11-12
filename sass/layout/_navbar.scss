@@ -1,0 +1,48 @@
+.navbar {
+    background-color: $color-navi-01;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 23px 72px;
+
+    &__logo {
+    width: 145px;
+    height: 26px;
+    }
+
+    &__menu {
+    display: flex;
+    align-items: center;
+
+        &-item {
+            height: 32px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            &-text {
+                font-size: 1.4rem;
+            }
+
+            &-user {
+                background-color: $color-light;
+                padding: 5px;
+                border-radius: 100px;
+            }
+
+            &:not(:last-child) {
+                padding: 0 24px;
+                border-right: 1px solid $color-navi-03;
+            }
+
+            &:is(:last-child) {
+                padding-left: 24px;
+                gap: 24px;
+            }
+
+
+        }
+    }
+}
+

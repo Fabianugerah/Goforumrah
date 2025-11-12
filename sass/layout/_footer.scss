@@ -1,0 +1,107 @@
+.footer {
+    background-color: $color-navi-01;
+    display: flex;
+    flex-direction: column;
+    padding: 96px 120px;
+    width: 100%;
+    gap: 72px;
+
+    &__menus {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(15, minmax(0, 1fr));
+        gap: 20px;
+
+        &-list {
+            grid-column: span 3;
+
+            &:is(:last-child) {
+                grid-column: span 6;
+            }
+
+            & > h5 {
+                margin-bottom: 24px;
+            }
+
+            &-item {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                
+                a {
+                    color: $color-light;
+                    text-decoration: none;
+                }
+            }
+
+            &-content {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                &-form {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 9px;
+
+                    &-input {
+                        width: 100%;
+                        padding: 13px 16px;
+                        background-color: $color-light;
+                        border: 1px solid $color-input;
+                        border-radius: 10px;
+
+                        &::placeholder {
+                            font-size: 1.6rem;
+                            color: $color-subtle;
+                        }
+                    }
+
+                    &-btn {
+                        border: none;
+                        background-color: $color-toscha-01;
+                        color: $color-white;
+                        border-radius: 10px;
+                        padding: 14px 28px;
+                    }
+                }
+    
+                p {
+                    color: $color-light;
+                }
+
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+
+        &-logo {
+
+            & > .copyright {
+                margin-top: 16px;
+                color: $color-white;
+            }
+        }
+
+        &-sosmed {
+            display: flex;
+            align-items: end;
+            gap: 24px;
+
+            &-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 48px;
+                height: 48px;
+                border-radius: 40px;
+                border: none;
+                background-color: $color-navi-02;
+                cursor: pointer;
+            }
+        }
+    }
+}
