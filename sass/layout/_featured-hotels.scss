@@ -1,7 +1,6 @@
 .featured-hotels {
     display: flex;
     flex-direction: column;
-    padding: 48px 120px;
     gap: 48px;
 
     &__header {
@@ -27,7 +26,7 @@
                 border: none;
                 background-color: $color-white;
                 border-bottom: 1px solid $color-input;
-                width: 137px;
+                width: 100%;
                 padding: 16px;
                 gap: 8px;
                 cursor: pointer;
@@ -46,6 +45,10 @@
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 20px;
 
+        @include respond(screen-md) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
         &-category {
             display: flex;
             flex-direction: column;
@@ -55,6 +58,7 @@
             &-img {
                 width: 100%;
                 border-radius: 16px;
+                object-fit: cover;
             }
 
             &-content {
@@ -67,7 +71,8 @@
                     display: flex;
                     flex-direction: column;
                     gap: 12px;
-                    width: 285px;
+                    width: 100%;
+                    max-width: 285px;
 
                     h5 {
                         white-space: nowrap;
@@ -81,7 +86,8 @@
                     display: flex;
                     align-items: center;
                     gap: 8px;
-                    width: 285px;
+                    width: 100%;
+                    max-width: 285px;
 
                     p {
                         color: $color-subtle;

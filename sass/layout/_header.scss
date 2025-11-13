@@ -13,6 +13,10 @@
         url(/img/modern-hotel-buildings-sea-shore-with-palm-trees-green-lawn.png);
     }
 
+    @include respond(screen-xl) {
+        height: 520px;
+    }
+
     &__title {
         display: flex;
         flex-direction: column;
@@ -20,6 +24,10 @@
         padding: 0px;
         gap: 16px;
         margin-top: 8rem;
+
+        @include respond(screen-xl) {
+            margin-top: 0;
+        }
     }
 }
 
