@@ -17,10 +17,6 @@
   @include respond(screen-sm) {
     padding: 0 20px;
   }
-
-  @include respond(screen-xs) {
-    padding: 0 17px;
-  }
 }
 
 .section-header {

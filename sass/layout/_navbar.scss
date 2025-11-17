@@ -52,7 +52,11 @@
                 gap: 24px;
             }
 
-
+            img[alt="Heart Icon"] {
+                @include respond(screen-xs) {
+                    display: none;
+                }
+            }
         }
     }
 }
