@@ -23,12 +23,17 @@
             border-radius: 24px;
             gap: 16px;
         }
+
+        @include respond(screen-xl) {
+            margin-top: 30px;
+        }
+
     }
 
     &-container {
         display: flex;
         align-items: center;
-        flex: 1;
+        flex: 1 1;
         gap: 16px;
 
         & > :not(:last-child) {
@@ -43,6 +48,17 @@
             width: 100%;
             flex-direction: column;
             gap: 12px;
+        }
+
+        &--flight {
+            .search-item {
+                flex: 2 1;
+                align-items: center;
+
+                &:is(:first-child) {
+                    border-right: none !important;
+                }
+            }
         }
     }
 
@@ -118,9 +134,118 @@
     }
 }
 
+.arrow-leftright-icon {
+    border-radius: 100px;
+    background-color: $color-white;
+    border: 1px solid $color-light !important;
+    padding: 8px;
+    flex-shrink: 0;
+
+    @include respond(screen-xl) {
+        position: absolute;
+        top: 78px;
+    }
+
+    @include respond(screen-md) {
+        top: 108px;
+    }
+}
+
 .dot {
   width: 5px;
   height: 5px;
   background-color: $color-separator;
   border-radius: 50%;
+}
+
+// Flight Type Radio Buttons
+.flight-type {
+    display: flex;
+    position: absolute;
+    padding: 12px 24px;
+    background-color: $color-white;
+    border: 1px solid $color-input;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    top: -48px;
+    left: 64px;
+    gap: 24px;
+
+    @include respond(screen-xl) {
+       top: -47px; 
+    }
+
+    @include respond(screen-md) {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid $color-separator;
+        padding: 16px 24px;
+        justify-content: space-around;
+        margin: -24px -24px -16px -24px;
+    }
+
+    &-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        cursor: pointer;
+        position: relative;
+
+        input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            
+            &:checked + .flight-type-indicator{
+                border-color: $color-toscha-01;
+                
+                &::after {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            &:checked ~ span {
+                color: $color-toscha-01;
+            }
+        }
+
+        span {
+            color: $color-primary;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+    }
+
+    &-indicator {
+        width: 20px;
+        height: 20px;
+        border: 1px solid $color-input;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+
+        &::after {
+            content: '';
+            width: 12.5px;
+            height: 12.5px;
+            align-items: center;
+            justify-content: center;
+            background-color: $color-toscha-01;
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.3s ease;
+        }
+    }
 }

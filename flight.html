@@ -30,10 +30,10 @@
       </div>
     </nav>
 
-    <header class="header header--hotel">
+    <header class="header header--flight">
       <!-- Tabs -->
       <div class="tabs">
-        <button class="tabs-item tabs-item--active">
+        <button class="tabs-item" data-link="index.html">
           <img
             src="img/svg/Buildings_tabs.svg"
             alt="Hotel"
@@ -42,7 +42,7 @@
           <p class="bs bs--bold tabs-item-text">Hotel</p>
         </button>
 
-        <button class="tabs-item">
+        <button class="tabs-item tabs-item--active" data-link="flight.html">
           <img src="img/svg/Flight.svg" alt="Flights" class="tabs-item-icon" />
           <p class="bs bs--bold tabs-item-text">Flights</p>
         </button>
@@ -56,7 +56,7 @@
           <p class="bs bs--bold tabs-item-text">Book Transfer</p>
         </button>
 
-        <button class="tabs-item">
+        <button class="tabs-item" data-link="flight.html">
           <img
             src="img/svg/SunHorizon.svg"
             alt="Tour Package"
@@ -68,7 +68,7 @@
 
       <!-- Title -->
       <div class="header__title padding-container">
-        <h1 class="heading-1">Find your next stay</h1>
+        <h1 class="heading-1">Find the best flight</h1>
         <p class="xl xl--medium">
           Search low prices on hotels, homes and much more...
         </p>
@@ -77,17 +77,52 @@
       <!-- Search -->
       <div class="search max-container padding-container">
         <div class="search-box">
-          <div class="search-container">
-            <div class="search-item search-item--full">
+          <div class="flight-type">
+            <label class="flight-type-item">
+              <input
+                type="radio"
+                name="flight-type"
+                value="round-trip"
+                checked
+              />
+              <span class="flight-type-indicator"></span>
+              <span class="bs bs--medium">Round-trip</span>
+            </label>
+            <label class="flight-type-item">
+              <input type="radio" name="flight-type" value="one-way" />
+              <span class="flight-type-indicator"></span>
+              <span class="bs bs--medium">One-way</span>
+            </label>
+          </div>
+
+          <div class="search-container search-container--flight">
+            <div class="search-item">
               <img
-                src="img/svg/Buildings.svg"
-                alt="Hotel"
+                src="img/svg/AirplaneTakeoff.svg"
+                alt="AirplaneTakeoff"
                 class="search-item-icon"
               />
               <input
                 type="text"
                 class="search-item-input lg lg--regular"
-                placeholder="Where are you going?"
+                placeholder="Where from?"
+              />
+            </div>
+            <img
+              src="img/svg/ArrowsLeftRight.svg"
+              alt="ArrowsLeftRight"
+              class="arrow-leftright-icon"
+            />
+            <div class="search-item">
+              <img
+                src="img/svg/AirplaneLanding.svg"
+                alt="AirplaneLanding"
+                class="search-item-icon"
+              />
+              <input
+                type="text"
+                class="search-item-input lg lg--regular"
+                placeholder="Where to?"
               />
             </div>
             <div class="search-item">
@@ -96,7 +131,15 @@
                 alt="Calendar"
                 class="search-item-icon"
               />
-              <p class="lg lg--regular">Check in - Check out</p>
+              <p class="lg lg--regular">Departure</p>
+            </div>
+            <div class="search-item">
+              <img
+                src="img/svg/Calendar.svg"
+                alt="Calendar"
+                class="search-item-icon"
+              />
+              <p class="lg lg--regular">Return</p>
             </div>
             <div class="search-item-wrapper">
               <div class="search-item--small">
@@ -109,117 +152,153 @@
               </div>
               <div class="dot"></div>
               <div class="search-item--small">
-                <p class="lg lg--regular">0 children</p>
-              </div>
-              <div class="dot"></div>
-              <div class="search-item--small">
-                <p class="lg lg--regular">1 room</p>
+                <p class="lg lg--regular">Economy</p>
               </div>
             </div>
           </div>
-          <button class="search-btn bs bs--bold">Search Hotel</button>
+          <button class="search-btn bs bs--bold">Search Flight</button>
         </div>
       </div>
     </header>
 
     <main class="main max-container padding-container">
-      <!-- Banner -->
-      <section class="banner">
-        <div class="banner__content">
-          <div class="banner__content-icon">
-            <img src="img/svg/FaceMask.svg" alt="FaceMask" />
+      <!-- Trending Cities -->
+      <section class="trending-cities">
+        <div class="trending-cities__header">
+          <h3 class="heading-3">Trending cities</h3>
+          <p class="lg lg--regular">
+            Book flights to a destination popular with travelers from Indonesia
+          </p>
+        </div>
+
+        <div class="trending-cities__category">
+          <div
+            class="trending-cities__category-card trending-cities__category-card--1"
+          >
+            <div class="trending-cities__category-card-content">
+              <h5
+                class="heading-5 trending-cities__category-card-content-title"
+              >
+                Madinah
+              </h5>
+              <div class="trending-cities__category-card-content-location">
+                <img
+                  src="img/svg/Flight.svg"
+                  alt="Flight"
+                  class="trending-cities__category-card-content-location-icon"
+                />
+                <p class="lg lg--regular">Flights from Jakarta</p>
+              </div>
+            </div>
           </div>
-          <div class="banner__content-text">
-            <p class="xl xl--bold">Keep calm with health protocol</p>
-            <p class="lg lg--regular">
-              Get the advice you need. Check the latest COVID-19 restrictions
-              before you travel.
-            </p>
+
+          <div
+            class="trending-cities__category-card trending-cities__category-card--2"
+          >
+            <div class="trending-cities__category-card-content">
+              <h5
+                class="heading-5 trending-cities__category-card-content-title"
+              >
+                Makkah
+              </h5>
+              <div class="trending-cities__category-card-content-location">
+                <img
+                  src="img/svg/Flight.svg"
+                  alt="Flight"
+                  class="trending-cities__category-card-content-location-icon"
+                />
+                <p class="lg lg--regular">Flights from Jakarta</p>
+              </div>
+            </div>
           </div>
-          <a href="#" class="btn-link lg lg--bold">Learn more</a>
+
+          <div
+            class="trending-cities__category-card trending-cities__category-card--3"
+          >
+            <div class="trending-cities__category-card-content">
+              <h5
+                class="heading-5 trending-cities__category-card-content-title"
+              >
+                Jeddah
+              </h5>
+              <div class="trending-cities__category-card-content-location">
+                <img
+                  src="img/svg/Flight.svg"
+                  alt="Flight"
+                  class="trending-cities__category-card-content-location-icon"
+                />
+                <p class="lg lg--regular">Flights from Jakarta</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- Plan Trip -->
-      <section class="plan-trip section-padding">
-        <div class="plan-trip__header">
-          <h3 class="heading-3">Plan your perfect trip</h3>
+      <!-- Airlines Partnerts -->
+      <section class="airline-partners section-padding">
+        <div class="airline-partners__header">
+          <h3 class="heading-3">Our airline partners</h3>
           <p class="lg lg--regular">
-            Search Flights, Hotels & Car Hire to our most popular destinations.
+            With various partner airlines, we are ready to fly you anywhere.
           </p>
         </div>
-        <div class="plan-trip__cities">
-          <!-- Photo 1 -->
-          <div class="plan-trip__cities-category">
+
+        <div class="airline-partners__category">
+          <div class="airline-partners__category-item">
             <img
-              src="img/image 1.png"
-              alt="Photo 1"
-              class="plan-trip__cities-category-img"
+              src="img/svg/Airline_Partner - Emirates.svg"
+              alt="Emirates"
+              class="airline-partners__category-img"
             />
-            <div class="plan-trip__cities-category-content">
-              <p class="xl xl--bold">Al-Ḥawiyah</p>
-              <p class="lg lg--regular">120 accommodations</p>
-            </div>
           </div>
-          <!-- Photo 2 -->
-          <div class="plan-trip__cities-category">
+          <div class="airline-partners__category-item">
             <img
-              src="img/image 2.png"
-              alt="Photo 2"
-              class="plan-trip__cities-category-img"
+              src="img/svg/Airline_Partner - Island Airlines.svg"
+              alt="Island Airlines"
+              class="airline-partners__category-img"
             />
-            <div class="plan-trip__cities-category-content">
-              <p class="xl xl--bold">Al-Hudā</p>
-              <p class="lg lg--regular">132 accommodations</p>
-            </div>
           </div>
-          <!-- Photo 3 -->
-          <div class="plan-trip__cities-category">
+          <div class="airline-partners__category-item">
             <img
-              src="img/image 3.png"
-              alt="Photo 3"
-              class="plan-trip__cities-category-img"
+              src="img/svg/Airline_Partner - Etihad.svg"
+              alt="Etihad"
+              class="airline-partners__category-img"
             />
-            <div class="plan-trip__cities-category-content">
-              <p class="xl xl--bold">Ju'rānah</p>
-              <p class="lg lg--regular">145 accommodations</p>
-            </div>
           </div>
-          <!-- Photo 4 -->
-          <div class="plan-trip__cities-category">
+          <div class="airline-partners__category-item">
             <img
-              src="img/image 4.png"
-              alt="Photo 4"
-              class="plan-trip__cities-category-img"
+              src="img/svg/Airline_Partner - Qatar Airways.svg"
+              alt="Qatar Airways"
+              class="airline-partners__category-img"
             />
-            <div class="plan-trip__cities-category-content">
-              <p class="xl xl--bold">Makkah</p>
-              <p class="lg lg--regular">40 accommodations</p>
-            </div>
           </div>
-          <!-- Photo 5 -->
-          <div class="plan-trip__cities-category">
+          <div class="airline-partners__category-item">
             <img
-              src="img/image 5.png"
-              alt="Photo 5"
-              class="plan-trip__cities-category-img"
+              src="img/svg/Airline_Partner - Fly DUbai.svg"
+              alt="Fly Dubai"
+              class="airline-partners__category-img"
             />
-            <div class="plan-trip__cities-category-content">
-              <p class="xl xl--bold">Mastūrah</p>
-              <p class="lg lg--regular">26 accommodations</p>
-            </div>
           </div>
-          <!-- Photo 6 -->
-          <div class="plan-trip__cities-category">
+          <div class="airline-partners__category-item">
             <img
-              src="img/image 6.png"
-              alt="Photo 6"
-              class="plan-trip__cities-category-img"
+              src="img/svg/Airline_Partner - Garuda Indonesia.svg"
+              alt="Garuda Indonesia"
+              class="airline-partners__category-img"
             />
-            <div class="plan-trip__cities-category-content">
-              <p class="xl xl--bold">Rābigh</p>
-              <p class="lg lg--regular">73 accommodations</p>
-            </div>
+          </div>
+          <div class="airline-partners__category-item">
+            <img
+              src="img/svg/Airline_Partner - Malaysia Airlines.svg"
+              alt="Malaysia Airlines"
+              class="airline-partners__category-img"
+            />
+          </div>
+          <div class="airline-partners__category-item">
+            <img
+              src="img/svg/Airline_Partner - Singapore Airlines.svg"
+              alt="Singapore Airlines"
+              class="airline-partners__category-img"
+            />
           </div>
         </div>
       </section>
@@ -252,7 +331,7 @@
         <div class="featured-hotels__container">
           <div class="featured-hotels__container-category">
             <img
-              src="img/image 7.png"
+              src="img/image_7.png"
               alt="Photo 7"
               class="featured-hotels__container-category-img"
             />
@@ -282,7 +361,7 @@
           <!-- Photo 2 -->
           <div class="featured-hotels__container-category">
             <img
-              src="img/image 8.png"
+              src="img/image_8.png"
               alt="Photo 8"
               class="featured-hotels__container-category-img"
             />
@@ -312,7 +391,7 @@
           <!-- Photo 3 -->
           <div class="featured-hotels__container-category">
             <img
-              src="img/image 9.png"
+              src="img/image_9.png"
               alt="Photo 9"
               class="featured-hotels__container-category-img"
             />
@@ -344,7 +423,7 @@
           <!-- Photo 4 -->
           <div class="featured-hotels__container-category">
             <img
-              src="img/image 10.png"
+              src="img/image_10.png"
               alt="Photo 10"
               class="featured-hotels__container-category-img"
             />
@@ -388,7 +467,7 @@
           <!-- Photo 1 -->
           <div class="inspiration-trip__article-card">
             <img
-              src="img/image 11.png"
+              src="img/trip_1.png"
               alt="Photo 11"
               class="inspiration-trip__article-card-img"
             />
@@ -408,7 +487,7 @@
           <!-- Photo 2 -->
           <div class="inspiration-trip__article-card">
             <img
-              src="img/image 12.png"
+              src="img/trip_2.png"
               alt="Photo 12"
               class="inspiration-trip__article-card-img"
             />
@@ -421,10 +500,11 @@
               <a href="#" class="btn-link bs bs--bold">Read More</a>
             </div>
           </div>
+
           <!-- Photo 3 -->
           <div class="inspiration-trip__article-card">
             <img
-              src="img/image 13.png"
+              src="img/trip_3.png"
               alt="Photo 13"
               class="inspiration-trip__article-card-img"
             />
@@ -499,25 +579,29 @@
 
       <div class="footer__content">
         <div class="footer__content-logo">
-          <img src="img/svg/Logo_large.svg" alt="Logo">
-          <p class="copyright bs bs--regular">© 2022 Goforumrah LLC All rights reserved.</p>
+          <img src="img/svg/Logo_large.svg" alt="Logo" />
+          <p class="copyright bs bs--regular">
+            © 2022 Goforumrah LLC All rights reserved.
+          </p>
         </div>
 
         <div class="footer__content-sosmed">
           <button class="footer__content-sosmed-item">
-            <img src="img/svg/InstagramLogo.svg" alt="InstagramLogo">
+            <img src="img/svg/InstagramLogo.svg" alt="InstagramLogo" />
           </button>
           <button class="footer__content-sosmed-item">
-            <img src="img/svg/FacebookLogo.svg" alt="FacebookLogo">
+            <img src="img/svg/FacebookLogo.svg" alt="FacebookLogo" />
           </button>
           <button class="footer__content-sosmed-item">
-            <img src="img/svg/TwitterLogo.svg" alt="TwitterLogo">
+            <img src="img/svg/TwitterLogo.svg" alt="TwitterLogo" />
           </button>
           <button class="footer__content-sosmed-item">
-            <img src="img/svg/YoutubeLogo.svg" alt="YoutubeLogo">
+            <img src="img/svg/YoutubeLogo.svg" alt="YoutubeLogo" />
           </button>
         </div>
       </div>
     </footer>
+
+    <script src="js/script.js"></script>
   </body>
 </html>

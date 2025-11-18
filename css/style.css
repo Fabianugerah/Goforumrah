@@ -199,6 +199,9 @@ h6 {
   gap: 16px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
 }
+.tabs-item, .tabs-item * {
+  text-decoration: none !important;
+}
 .tabs-item {
   display: flex;
   padding: 12px 32px;
@@ -215,10 +218,16 @@ h6 {
     padding: 8px 16px;
   }
 }
+.tabs-item-icon {
+  filter: none;
+}
 .tabs-item--active {
   background-color: #052C47;
   border-radius: 1000px;
   color: #FFFFFF;
+}
+.tabs-item--active .tabs-item-icon {
+  filter: brightness(0) invert(1);
 }
 @media only screen and (max-width: 768px) {
   .tabs-item:not(.tabs-item--active) .tabs-item-text {
@@ -231,7 +240,7 @@ h6 {
   border-radius: 1000px;
 }
 .tabs-item:hover .tabs-item-icon {
-  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7495%) hue-rotate(288deg) brightness(100%) contrast(100%);
+  filter: brightness(0) invert(1);
 }
 
 .search {
@@ -261,10 +270,15 @@ h6 {
     gap: 16px;
   }
 }
+@media only screen and (max-width: 1280px) {
+  .search-box {
+    margin-top: 30px;
+  }
+}
 .search-container {
   display: flex;
   align-items: center;
-  flex: 1;
+  flex: 1 1;
   gap: 16px;
 }
 .search-container > :not(:last-child) {
@@ -281,6 +295,13 @@ h6 {
     flex-direction: column;
     gap: 12px;
   }
+}
+.search-container--flight .search-item {
+  flex: 2 1;
+  align-items: center;
+}
+.search-container--flight .search-item:is(:first-child) {
+  border-right: none !important;
 }
 .search-item {
   position: relative;
@@ -349,11 +370,115 @@ h6 {
   }
 }
 
+.arrow-leftright-icon {
+  border-radius: 100px;
+  background-color: #FFFFFF;
+  border: 1px solid #FAFBFB !important;
+  padding: 8px;
+  flex-shrink: 0;
+}
+@media only screen and (max-width: 1280px) {
+  .arrow-leftright-icon {
+    position: absolute;
+    top: 78px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .arrow-leftright-icon {
+    top: 108px;
+  }
+}
+
 .dot {
   width: 5px;
   height: 5px;
   background-color: #EEF0F2;
   border-radius: 50%;
+}
+
+.flight-type {
+  display: flex;
+  position: absolute;
+  padding: 12px 24px;
+  background-color: #FFFFFF;
+  border: 1px solid #D9E0E4;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  top: -48px;
+  left: 64px;
+  gap: 24px;
+}
+@media only screen and (max-width: 1280px) {
+  .flight-type {
+    top: -47px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .flight-type {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #EEF0F2;
+    padding: 16px 24px;
+    justify-content: space-around;
+    margin: -24px -24px -16px -24px;
+  }
+}
+.flight-type-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  cursor: pointer;
+  position: relative;
+}
+.flight-type-item input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.flight-type-item input[type=radio]:checked + .flight-type-indicator {
+  border-color: #1CB78D;
+}
+.flight-type-item input[type=radio]:checked + .flight-type-indicator::after {
+  opacity: 1;
+  transform: scale(1);
+}
+.flight-type-item input[type=radio]:checked ~ span {
+  color: #1CB78D;
+}
+.flight-type-item span {
+  color: rgba(27, 27, 27, 0.9607843137);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+.flight-type-indicator {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #D9E0E4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+.flight-type-indicator::after {
+  content: "";
+  width: 12.5px;
+  height: 12.5px;
+  align-items: center;
+  justify-content: center;
+  background-color: #1CB78D;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
 }
 
 .btn-link {
@@ -431,6 +556,12 @@ h6 {
   height: 421px;
 }
 .header--hotel {
+  background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.6)), url(/img/modern-hotel-buildings-sea-shore-with-palm-trees-green-lawn.png);
+}
+.header--flight {
+  background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.6)), url(/img/Bg-Flight.png);
+}
+.header--book-transfer {
   background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.6)), url(/img/modern-hotel-buildings-sea-shore-with-palm-trees-green-lawn.png);
 }
 @media only screen and (max-width: 1280px) {
@@ -966,6 +1097,113 @@ h6 {
   border: none;
   background-color: #446175;
   cursor: pointer;
+}
+
+.trending-cities {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 140px 0 48px 0;
+}
+@media only screen and (max-width: 1280px) {
+  .trending-cities {
+    padding: 520px 0 48px 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .trending-cities {
+    padding: 560px 0 48px 0;
+  }
+}
+.trending-cities__header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgba(27, 27, 27, 0.9607843137);
+}
+.trending-cities__header > :is(:last-child) {
+  color: #616161;
+}
+.trending-cities__category {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media only screen and (max-width: 768px) {
+  .trending-cities__category {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+.trending-cities__category-card {
+  display: flex;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 213px;
+  border-radius: 16px;
+}
+.trending-cities__category-card--1 {
+  background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.4), rgba(5, 44, 71, 0.8)), url(/img/trending-1.png);
+}
+.trending-cities__category-card--2 {
+  background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.4), rgba(5, 44, 71, 0.8)), url(/img/trending-2.png);
+}
+.trending-cities__category-card--3 {
+  background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.4), rgba(5, 44, 71, 0.8)), url(/img/trending-3.png);
+}
+.trending-cities__category-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 127px;
+  padding-left: 24px;
+}
+.trending-cities__category-card-content-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.trending-cities__category-card-content-location-icon {
+  filter: brightness(0) invert(1);
+}
+
+.airline-partners {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.airline-partners__header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgba(27, 27, 27, 0.9607843137);
+}
+.airline-partners__header > :is(:last-child) {
+  color: #616161;
+}
+.airline-partners__category {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .airline-partners__category {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.airline-partners__category-item {
+  display: flex;
+  justify-content: center;
+  border: 1.5px solid #D9E0E4;
+  border-radius: 16px;
+  padding: 23px;
 }
 
 /*# sourceMappingURL=style.css.map */
