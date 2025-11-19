@@ -11,7 +11,7 @@
 
     &--hotel {
         background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.6)),
-        url(/img/modern-hotel-buildings-sea-shore-with-palm-trees-green-lawn.png);
+        url(/img/Bg-Hotel.png);
     }
 
     &--flight {
@@ -21,7 +21,7 @@
 
     &--book-transfer {
         background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.6)),
-        url(/img/modern-hotel-buildings-sea-shore-with-palm-trees-green-lawn.png);
+        url(/img/Bg-Car.png);
     }
 
     @include respond(screen-xl) {

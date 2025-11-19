@@ -202,6 +202,11 @@ h6 {
 .tabs-item, .tabs-item * {
   text-decoration: none !important;
 }
+@media only screen and (max-width: 768px) {
+  .tabs {
+    gap: 0;
+  }
+}
 .tabs-item {
   display: flex;
   padding: 12px 32px;
@@ -309,12 +314,14 @@ h6 {
   align-items: center;
   gap: 12px;
   padding: 12px 20px;
+  min-width: 0;
 }
 @media only screen and (max-width: 1280px) {
   .search-item {
     width: 100%;
     border-bottom: 1px solid #EEF0F2;
     padding: 24px 20px;
+    align-items: flex-start;
   }
 }
 .search-item--full {
@@ -342,6 +349,7 @@ h6 {
 .search-item-icon {
   width: 24px;
   height: 24px;
+  flex-shrink: 0;
 }
 .search-item-input {
   border: none;
@@ -453,7 +461,6 @@ h6 {
 }
 .flight-type-item span {
   color: rgba(27, 27, 27, 0.9607843137);
-  white-space: nowrap;
   transition: all 0.3s ease;
 }
 .flight-type-indicator {
@@ -556,13 +563,13 @@ h6 {
   height: 421px;
 }
 .header--hotel {
-  background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.6)), url(/img/modern-hotel-buildings-sea-shore-with-palm-trees-green-lawn.png);
+  background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.6)), url(/img/Bg-Hotel.png);
 }
 .header--flight {
   background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.6)), url(/img/Bg-Flight.png);
 }
 .header--book-transfer {
-  background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.6)), url(/img/modern-hotel-buildings-sea-shore-with-palm-trees-green-lawn.png);
+  background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.6)), url(/img/Bg-Car.png);
 }
 @media only screen and (max-width: 1280px) {
   .header {
@@ -596,7 +603,20 @@ h6 {
 }
 @media only screen and (max-width: 480px) {
   .banner {
-    padding: 330px 0 80px 0;
+    padding: 330px 0 48px 0;
+  }
+}
+.banner--book-transfer {
+  padding: 168px 0 48px 0;
+}
+@media only screen and (max-width: 1280px) {
+  .banner--book-transfer {
+    padding: 400px 0 48px 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .banner--book-transfer {
+    padding: 500px 0 48px 0;
   }
 }
 .banner__content {
@@ -929,6 +949,8 @@ h6 {
 
 .footer {
   background-color: #052C47;
+}
+.footer-wrapper {
   display: flex;
   flex-direction: column;
   padding: 96px 120px;
@@ -936,22 +958,22 @@ h6 {
   gap: 72px;
 }
 @media only screen and (max-width: 768px) {
-  .footer {
+  .footer-wrapper {
     gap: 40px 0;
   }
 }
 @media only screen and (max-width: 1280px) {
-  .footer {
+  .footer-wrapper {
     padding: 96px 60px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .footer {
+  .footer-wrapper {
     padding: 96px 40px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .footer {
+  .footer-wrapper {
     padding: 96px 20px;
   }
 }
@@ -1204,6 +1226,167 @@ h6 {
   border: 1.5px solid #D9E0E4;
   border-radius: 16px;
   padding: 23px;
+}
+
+.popular-destination {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.popular-destination__header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgba(27, 27, 27, 0.9607843137);
+}
+.popular-destination__header > :is(:last-child) {
+  color: #616161;
+}
+.popular-destination__container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .popular-destination__container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.popular-destination__container-category {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 24px;
+  width: 100%;
+}
+.popular-destination__container-category-img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  object-fit: cover;
+}
+.popular-destination__container-category-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: rgba(27, 27, 27, 0.9607843137);
+  gap: 16px;
+}
+.popular-destination__container-category-content-title {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  overflow: hidden;
+}
+.popular-destination__container-category-content-title h5 {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+@media only screen and (max-width: 1024px) {
+  .popular-destination__container-category-content-title h5 {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .popular-destination__container-category-content-title h5 {
+    font-size: 18px;
+    line-height: 140%;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.popular-destination__container-category-content-price {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.driver-age-checkbox {
+  position: absolute;
+  top: 497px;
+  left: 184px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: rgba(27, 27, 27, 0.9607843137);
+}
+.driver-age-checkbox-form {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.driver-age-checkbox-form input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.driver-age-checkbox-form input[type=checkbox]:checked + .driver-age-checkbox-indicator {
+  background-color: #1CB78D;
+  border-color: #1CB78D;
+}
+.driver-age-checkbox-form input[type=checkbox]:checked + .driver-age-checkbox-indicator::after {
+  opacity: 1;
+  transform: rotate(45deg) scale(1);
+}
+.driver-age-checkbox-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  border: 1px solid #D9E0E4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+.driver-age-checkbox-indicator::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #FFFFFF;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+.driver-age-checkbox-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.driver-age-checkbox-text span {
+  color: rgba(27, 27, 27, 0.9607843137);
+  white-space: nowrap;
+}
+@media only screen and (max-width: 640px) {
+  .driver-age-checkbox-text span {
+    white-space: normal;
+  }
+}
+.driver-age-checkbox-text img {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

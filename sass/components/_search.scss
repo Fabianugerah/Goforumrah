@@ -68,11 +68,13 @@
         align-items: center;
         gap: 12px;
         padding: 12px 20px;
+        min-width: 0;
 
         @include respond(screen-xl) {
             width: 100%;
             border-bottom: 1px solid $color-separator;
             padding: 24px 20px;
+            align-items: flex-start;
         }
 
         &--full {
@@ -102,6 +104,7 @@
         &-icon {
             width: 24px;
             height: 24px;
+            flex-shrink: 0;
         }
 
         &-input {
@@ -218,7 +221,6 @@
 
         span {
             color: $color-primary;
-            white-space: nowrap;
             transition: all 0.3s ease;
         }
     }

@@ -30,10 +30,10 @@
       </div>
     </nav>
 
-    <header class="header header--hotel">
+    <header class="header header--book-transfer">
       <!-- Tabs -->
       <div class="tabs">
-        <button class="tabs-item tabs-item--active" data-link="index.html">
+        <button class="tabs-item" data-link="index.html">
           <img
             src="img/svg/Buildings_tabs.svg"
             alt="Hotel"
@@ -47,7 +47,10 @@
           <p class="bs bs--bold tabs-item-text">Flights</p>
         </button>
 
-        <button class="tabs-item" data-link="book-transfer.html">
+        <button
+          class="tabs-item tabs-item--active"
+          data-link="book-transfer.html"
+        >
           <img
             src="img/svg/Car.svg"
             alt="Book Transfer"
@@ -68,7 +71,7 @@
 
       <!-- Title -->
       <div class="header__title padding-container">
-        <h1 class="heading-1">Find your next stay</h1>
+        <h1 class="heading-1">Find your best ride</h1>
         <p class="xl xl--medium">
           Search low prices on hotels, homes and much more...
         </p>
@@ -77,17 +80,39 @@
       <!-- Search -->
       <div class="search max-container padding-container">
         <div class="search-box">
+          <div class="flight-type">
+            <label class="flight-type-item">
+              <input
+                type="radio"
+                name="flight-type"
+                value="Return to same location"
+                checked
+              />
+              <span class="flight-type-indicator"></span>
+              <span class="bs bs--medium">Return to same location</span>
+            </label>
+            <label class="flight-type-item">
+              <input
+                type="radio"
+                name="flight-type"
+                value="Return to different location"
+              />
+              <span class="flight-type-indicator"></span>
+              <span class="bs bs--medium">Return to different location</span>
+            </label>
+          </div>
+
           <div class="search-container">
             <div class="search-item search-item--full">
               <img
-                src="img/svg/Buildings.svg"
+                src="img/svg/MapPin_subtle.svg"
                 alt="Hotel"
                 class="search-item-icon"
               />
               <input
                 type="text"
                 class="search-item-input lg lg--regular"
-                placeholder="Where are you going?"
+                placeholder="Where your pick-up location?"
               />
             </div>
             <div class="search-item">
@@ -96,280 +121,195 @@
                 alt="Calendar"
                 class="search-item-icon"
               />
-              <p class="lg lg--regular">Check in - Check out</p>
+              <p class="lg lg--regular">Pick-up Date & Time</p>
             </div>
-            <div class="search-item-wrapper">
-              <div class="search-item--small">
-                <img
-                  src="img/svg/Users.svg"
-                  alt="Users"
-                  class="search-item-icon"
-                />
-                <p class="lg lg--regular">1 adult</p>
-              </div>
-              <div class="dot"></div>
-              <div class="search-item--small">
-                <p class="lg lg--regular">0 children</p>
-              </div>
-              <div class="dot"></div>
-              <div class="search-item--small">
-                <p class="lg lg--regular">1 room</p>
-              </div>
+            <div class="search-item">
+              <img
+                src="img/svg/Calendar.svg"
+                alt="Calendar"
+                class="search-item-icon"
+              />
+              <p class="lg lg--regular">Drop-off Date & Time</p>
             </div>
           </div>
-          <button class="search-btn bs bs--bold">Search Hotel</button>
+          <button class="search-btn bs bs--bold">Search Car</button>
+        </div>
+      </div>
+
+      <!-- Driver Age Checkbox -->
+      <div class="driver-age-checkbox">
+        <label class="driver-age-checkbox-form">
+          <input
+            type="checkbox"
+            class="driver-age-checkbox-input"
+            name="driver-age"
+            value="30-65"
+          />
+          <span class="driver-age-checkbox-indicator"></span>
+        </label>
+        <div class="driver-age-checkbox-text">
+          <span class="bs bs--medium">Driver aged between 30 - 65</span>
+          <img src="img/svg/Warning.svg" alt="Warning" />
         </div>
       </div>
     </header>
 
     <main class="main max-container padding-container">
       <!-- Banner -->
-      <section class="banner">
+      <section class="banner banner--book-transfer">
         <div class="banner__content">
           <div class="banner__content-icon">
-            <img src="img/svg/FaceMask.svg" alt="FaceMask" />
+            <img src="img/svg/Car.svg" alt="FaceMask" />
           </div>
           <div class="banner__content-text">
-            <p class="xl xl--bold">Keep calm with health protocol</p>
+            <p class="xl xl--bold">
+              Clean cars. Flexible bookings. Socially distant rental counters.
+            </p>
             <p class="lg lg--regular">
-              Get the advice you need. Check the latest COVID-19 restrictions
-              before you travel.
+              We’re working with our partners to keep you safe and in the
+              driving seat.
             </p>
           </div>
           <a href="#" class="btn-link lg lg--bold">Learn more</a>
         </div>
       </section>
 
-      <!-- Plan Trip -->
-      <section class="plan-trip section-padding">
-        <div class="plan-trip__header">
-          <h3 class="heading-3">Plan your perfect trip</h3>
+      <!-- Airlines Partnerts -->
+      <section class="airline-partners section-padding">
+        <div class="airline-partners__header">
+          <h3 class="heading-3">Popular car hire brands</h3>
           <p class="lg lg--regular">
-            Search Flights, Hotels & Car Hire to our most popular destinations.
+            With various partner airlines, we are ready to fly you anywhere.
           </p>
         </div>
-        <div class="plan-trip__cities">
-          <!-- Photo 1 -->
-          <div class="plan-trip__cities-category">
+
+        <div class="airline-partners__category">
+          <div class="airline-partners__category-item">
             <img
-              src="img/image_1.png"
-              alt="Photo 1"
-              class="plan-trip__cities-category-img"
+              src="img/svg/Car-hire-brand-04.svg"
+              alt="Car-hire-brand-04"
+              class="airline-partners__category-img"
             />
-            <div class="plan-trip__cities-category-content">
-              <p class="xl xl--bold">Al-Ḥawiyah</p>
-              <p class="lg lg--regular">120 accommodations</p>
-            </div>
           </div>
-          <!-- Photo 2 -->
-          <div class="plan-trip__cities-category">
+          <div class="airline-partners__category-item">
             <img
-              src="img/image_2.png"
-              alt="Photo 2"
-              class="plan-trip__cities-category-img"
+              src="img/svg/Car-hire-brand-03.svg"
+              alt="Car-hire-brand-03"
+              class="airline-partners__category-img"
             />
-            <div class="plan-trip__cities-category-content">
-              <p class="xl xl--bold">Al-Hudā</p>
-              <p class="lg lg--regular">132 accommodations</p>
-            </div>
           </div>
-          <!-- Photo 3 -->
-          <div class="plan-trip__cities-category">
+          <div class="airline-partners__category-item">
             <img
-              src="img/image_3.png"
-              alt="Photo 3"
-              class="plan-trip__cities-category-img"
+              src="img/svg/Car-hire-brand-02.svg"
+              alt="Car-hire-brand-02"
+              class="airline-partners__category-img"
             />
-            <div class="plan-trip__cities-category-content">
-              <p class="xl xl--bold">Ju'rānah</p>
-              <p class="lg lg--regular">145 accommodations</p>
-            </div>
           </div>
-          <!-- Photo 4 -->
-          <div class="plan-trip__cities-category">
+          <div class="airline-partners__category-item">
             <img
-              src="img/image_4.png"
-              alt="Photo 4"
-              class="plan-trip__cities-category-img"
+              src="img/svg/Car-hire-brand-01.svg"
+              alt="Car-hire-brand-01"
+              class="airline-partners__category-img"
             />
-            <div class="plan-trip__cities-category-content">
-              <p class="xl xl--bold">Makkah</p>
-              <p class="lg lg--regular">40 accommodations</p>
-            </div>
-          </div>
-          <!-- Photo 5 -->
-          <div class="plan-trip__cities-category">
-            <img
-              src="img/image_5.png"
-              alt="Photo 5"
-              class="plan-trip__cities-category-img"
-            />
-            <div class="plan-trip__cities-category-content">
-              <p class="xl xl--bold">Mastūrah</p>
-              <p class="lg lg--regular">26 accommodations</p>
-            </div>
-          </div>
-          <!-- Photo 6 -->
-          <div class="plan-trip__cities-category">
-            <img
-              src="img/image_6.png"
-              alt="Photo 6"
-              class="plan-trip__cities-category-img"
-            />
-            <div class="plan-trip__cities-category-content">
-              <p class="xl xl--bold">Rābigh</p>
-              <p class="lg lg--regular">73 accommodations</p>
-            </div>
           </div>
         </div>
       </section>
 
       <!-- Featured Hotels Recommendation -->
-      <section class="featured-hotels section-padding">
-        <div class="featured-hotels__header">
-          <h3 class="heading-3">Featured hotels recommended for you</h3>
-          <div class="featured-hotels__header-tabs">
-            <button
-              class="featured-hotels__header-tabs-menu bs bs--bold featured-hotels__header-tabs-menu--active"
-            >
-              Al-Ḥawiyah
-            </button>
-            <button class="featured-hotels__header-tabs-menu bs bs--regular">
-              Al-Hudā
-            </button>
-            <button class="featured-hotels__header-tabs-menu bs bs--regular">
-              Ju'rānah
-            </button>
-            <button class="featured-hotels__header-tabs-menu bs bs--regular">
-              Makkah
-            </button>
-            <button class="featured-hotels__header-tabs-menu bs bs--regular">
-              Mastūrah
-            </button>
-          </div>
+      <section class="popular-destination section-padding">
+        <div class="popular-destination__header">
+          <h3 class="heading-3">Popular car hire brands</h3>
+          <p class="lg lg--regular">
+            With various partner airlines, we are ready to fly you anywhere.
+          </p>
         </div>
-        <!-- Photo 1 -->
-        <div class="featured-hotels__container">
-          <div class="featured-hotels__container-category">
+
+        <div class="popular-destination__container">
+          <!-- Photo 1 -->
+          <div class="popular-destination__container-category">
             <img
-              src="img/image_7.png"
-              alt="Photo 7"
-              class="featured-hotels__container-category-img"
+              src="img/Popular-Destination_1.png"
+              alt="Popular Destination 1"
+              class="popular-destination__container-category-img"
             />
-            <div class="featured-hotels__container-category-content">
-              <div class="featured-hotels__container-category-content-title">
-                <h5 class="heading-5">Golden Dune Hotel & Suite</h5>
-                <div
-                  class="featured-hotels__container-category-content-location"
-                >
-                  <img
-                    src="img/svg/MapPin.svg"
-                    alt="MapPin"
-                    class="featured-hotels__container-category-content-location-icon"
-                  />
-                  <p class="lg lg--regular">
-                    Saud Al Uthman Saud al uthman Road, 14253 Riyadh, Saudi
-                    Arabia
-                  </p>
-                </div>
+            <div class="popular-destination__container-category-content">
+              <div
+                class="popular-destination__container-category-content-title"
+              >
+                <h5 class="heading-5">Makkah</h5>
               </div>
-              <div class="featured-hotels__container-category-content-price">
-                <p class="xl xl--bold">$ 350.00</p>
-                <p class="bs bs--regular">/ night</p>
+              <div
+                class="popular-destination__container-category-content-price"
+              >
+                <p class="bs bs--regular">Start from</p>
+                <p class="xl xl--bold">$ 50.00</p>
+                <p class="bs bs--regular">/ day</p>
               </div>
             </div>
           </div>
           <!-- Photo 2 -->
-          <div class="featured-hotels__container-category">
+          <div class="popular-destination__container-category">
             <img
-              src="img/image_8.png"
-              alt="Photo 8"
-              class="featured-hotels__container-category-img"
+              src="img//Popular-Destination_2.png"
+              alt="Popular Destination 2"
+              class="popular-destination__container-category-img"
             />
-            <div class="featured-hotels__container-category-content">
-              <div class="featured-hotels__container-category-content-title">
-                <h5 class="heading-5">Karim Hotel Riyadh</h5>
-                <div
-                  class="featured-hotels__container-category-content-location"
-                >
-                  <img
-                    src="img/svg/MapPin.svg"
-                    alt="MapPin"
-                    class="featured-hotels__container-category-content-location-icon"
-                  />
-                  <p class="lg lg--regular">
-                    Prince Mugrin Ibn Abdulaziz, An Nuzhah District, 24446
-                    Riyadh, Saudi Arabia –
-                  </p>
-                </div>
+            <div class="popular-destination__container-category-content">
+              <div
+                class="popular-destination__container-category-content-title"
+              >
+                <h5 class="heading-5">Madinah</h5>
               </div>
-              <div class="featured-hotels__container-category-content-price">
-                <p class="xl xl--bold">$ 350.00</p>
-                <p class="bs bs--regular">/ night</p>
+              <div
+                class="popular-destination__container-category-content-price"
+              >
+                <p class="bs bs--regular">Start from</p>
+                <p class="xl xl--bold">$ 56.00</p>
+                <p class="bs bs--regular">/ day</p>
               </div>
             </div>
           </div>
           <!-- Photo 3 -->
-          <div class="featured-hotels__container-category">
+          <div class="popular-destination__container-category">
             <img
-              src="img/image_9.png"
-              alt="Photo 9"
-              class="featured-hotels__container-category-img"
+              src="img/Popular-Destination_3.png"
+              alt="Popular Destination 3"
+              class="popular-destination__container-category-img"
             />
-            <div class="featured-hotels__container-category-content">
-              <div class="featured-hotels__container-category-content-title">
-                <h5 class="heading-5">
-                  Aloft Dhahran Hotel Opens in new window
-                </h5>
-                <div
-                  class="featured-hotels__container-category-content-location"
-                >
-                  <img
-                    src="img/svg/MapPin.svg"
-                    alt="MapPin"
-                    class="featured-hotels__container-category-content-location-icon"
-                  />
-                  <p class="lg lg--regular">
-                    King Saud Branch Road Crossing 21st Street، Dhahran Saudi
-                    Arabia, Al Olayya, 11621 Al Khobar,
-                  </p>
-                </div>
+            <div class="popular-destination__container-category-content">
+              <div
+                class="popular-destination__container-category-content-title"
+              >
+                <h5 class="heading-5">Jeddah</h5>
               </div>
-              <div class="featured-hotels__container-category-content-price">
-                <p class="xl xl--bold">$ 350.00</p>
-                <p class="bs bs--regular">/ night</p>
+              <div
+                class="popular-destination__container-category-content-price"
+              >
+                <p class="bs bs--regular">Start from</p>
+                <p class="xl xl--bold">$ 72.00</p>
+                <p class="bs bs--regular">/ day</p>
               </div>
             </div>
           </div>
           <!-- Photo 4 -->
-          <div class="featured-hotels__container-category">
+          <div class="popular-destination__container-category">
             <img
-              src="img/image_10.png"
-              alt="Photo 10"
-              class="featured-hotels__container-category-img"
+              src="img/Popular-Destination_4.png"
+              alt="Popular Destination 4"
+              class="popular-destination__container-category-img"
             />
-            <div class="featured-hotels__container-category-content">
-              <div class="featured-hotels__container-category-content-title">
-                <h5 class="heading-5">
-                  Aloft Dhahran Hotel Opens in new window
-                </h5>
-                <div
-                  class="featured-hotels__container-category-content-location"
-                >
-                  <img
-                    src="img/svg/MapPin.svg"
-                    alt="MapPin"
-                    class="featured-hotels__container-category-content-location-icon"
-                  />
-                  <p class="lg lg--regular">
-                    King Saud Branch Road Crossing 21st Street، Dhahran Saudi
-                    Arabia, Al Olayya, 11621 Al Khobar,
-                  </p>
-                </div>
+            <div class="popular-destination__container-category-content">
+              <div
+                class="popular-destination__container-category-content-title"
+              >
+                <h5 class="heading-5">Riyadh</h5>
               </div>
-              <div class="featured-hotels__container-category-content-price">
-                <p class="xl xl--bold">$ 350.00</p>
-                <p class="bs bs--regular">/ night</p>
+              <div
+                class="popular-destination__container-category-content-price"
+              >
+                <p class="bs bs--regular">Start from</p>
+                <p class="xl xl--bold">$ 68.00</p>
+                <p class="bs bs--regular">/ day</p>
               </div>
             </div>
           </div>

@@ -17,6 +17,10 @@
         text-decoration: none !important;
     }
 
+    @include respond(screen-md) {
+        gap: 0;
+    }
+
     &-item {
         display: flex;
         padding: 12px 32px;

@@ -1,0 +1,84 @@
+.driver-age-checkbox {
+    position: absolute;
+    top: 497px;
+    left: 184px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: $color-primary;
+
+    &-form {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+
+        input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+
+            &:checked + .driver-age-checkbox-indicator {
+                background-color: $color-toscha-01;
+                border-color: $color-toscha-01;
+
+                &::after {
+                    opacity: 1;
+                    transform: rotate(45deg) scale(1);
+                }
+            }
+        }
+    }
+
+    &-indicator {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        background-color: $color-white;
+        border: 1px solid $color-input;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        flex-shrink: 0;
+        transition: all 0.2s ease;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid $color-white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg) scale(0);
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+    }
+
+    &-text {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        span {
+            color: $color-primary;
+            white-space: nowrap;
+
+            @include respond(screen-sm) {
+                white-space: normal;
+            }
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+    }
+}
