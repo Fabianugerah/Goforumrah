@@ -175,7 +175,6 @@ h6 {
   justify-content: center;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 48px;
 }
 .section-header > p {
   color: #616161;
@@ -186,12 +185,12 @@ h6 {
 }
 
 .tabs {
-  position: absolute;
-  top: 40px;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 40px;
+  flex-direction: row;
   background-color: #FFFFFF;
   border-radius: 1000px;
   border: 1px solid #D9E0E4;
@@ -315,6 +314,7 @@ h6 {
   gap: 12px;
   padding: 12px 20px;
   min-width: 0;
+  cursor: pointer;
 }
 @media only screen and (max-width: 1280px) {
   .search-item {
@@ -338,6 +338,7 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 }
 @media only screen and (max-width: 1280px) {
   .search-item-wrapper {
@@ -396,6 +397,11 @@ h6 {
     top: 120px;
   }
 }
+@media only screen and (max-width: 480px) {
+  .arrow-leftright-icon {
+    top: 165px;
+  }
+}
 
 .dot {
   width: 5px;
@@ -436,6 +442,13 @@ h6 {
     margin: -24px -24px -4px -24px;
   }
 }
+@media only screen and (max-width: 480px) {
+  .flight-type {
+    flex-direction: column;
+    align-items: flex-start;
+    left: -3px;
+  }
+}
 .flight-type-item {
   display: flex;
   align-items: center;
@@ -464,16 +477,19 @@ h6 {
   transition: all 0.3s ease;
 }
 .flight-type-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 20px;
   height: 20px;
   border: 1px solid #D9E0E4;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   flex-shrink: 0;
   transition: all 0.3s ease;
+}
+.flight-type-indicator:hover {
+  border: 1px solid #1CB78D;
 }
 .flight-type-indicator::after {
   content: "";
@@ -491,6 +507,149 @@ h6 {
 .btn-link {
   text-decoration: none;
   color: #1CB78D;
+  transition: all 0.2s ease;
+}
+.btn-link:hover {
+  color: #55C9A9;
+}
+
+.btn {
+  background-color: #1CB78D;
+  border: none;
+  color: #FFFFFF;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #55C9A9;
+}
+.btn-search {
+  padding: 20px 40px;
+  border-radius: 1000px;
+}
+@media only screen and (max-width: 1280px) {
+  .btn-search {
+    width: 100%;
+  }
+}
+.btn-footer {
+  border-radius: 10px;
+  padding: 14px 28px;
+}
+@media only screen and (max-width: 640px) {
+  .btn-footer {
+    width: 100%;
+  }
+}
+
+.driver-age-wrapper {
+  position: absolute;
+  width: 100%;
+  top: 497px;
+  z-index: 998;
+}
+@media only screen and (max-width: 1280px) {
+  .driver-age-wrapper {
+    top: 810px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .driver-age-wrapper {
+    top: 855px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .driver-age-wrapper {
+    top: 860px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .driver-age-wrapper {
+    top: 900px;
+  }
+}
+
+.driver-age-checkbox {
+  display: flex;
+  align-items: center;
+  padding-left: 64px;
+  gap: 16px;
+  color: rgba(27, 27, 27, 0.9607843137);
+}
+@media only screen and (max-width: 768px) {
+  .driver-age-checkbox {
+    padding-left: 34px;
+  }
+}
+.driver-age-checkbox-form {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.driver-age-checkbox-form input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.driver-age-checkbox-form input[type=checkbox]:checked + .driver-age-checkbox-indicator {
+  background-color: #1CB78D;
+  border-color: #1CB78D;
+}
+.driver-age-checkbox-form input[type=checkbox]:checked + .driver-age-checkbox-indicator::after {
+  opacity: 1;
+  transform: rotate(45deg) scale(1);
+}
+.driver-age-checkbox-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  border: 1px solid #D9E0E4;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+.driver-age-checkbox-indicator:hover {
+  border-color: #1CB78D;
+}
+.driver-age-checkbox-indicator::after {
+  content: "";
+  position: absolute;
+  left: 7.5px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid #FFFFFF;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+.driver-age-checkbox-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.driver-age-checkbox-text span {
+  color: rgba(27, 27, 27, 0.9607843137);
+  white-space: nowrap;
+}
+@media only screen and (max-width: 640px) {
+  .driver-age-checkbox-text span {
+    white-space: normal;
+  }
+}
+.driver-age-checkbox-text img {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 .navbar {
@@ -518,11 +677,13 @@ h6 {
 .navbar__menu {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .navbar__menu-item {
   display: flex;
   align-items: center;
   gap: 4px;
+  cursor: pointer;
 }
 .navbar__menu-item-text {
   font-size: 1.4rem;
@@ -552,13 +713,13 @@ h6 {
 }
 
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
-  display: flex;
   position: relative;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   height: 421px;
 }
@@ -611,12 +772,17 @@ h6 {
 }
 @media only screen and (max-width: 1280px) {
   .banner--book-transfer {
-    padding: 400px 0 48px 0;
+    padding: 380px 0 48px 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .banner--book-transfer {
+    padding: 430px 0 48px 0;
   }
 }
 @media only screen and (max-width: 480px) {
   .banner--book-transfer {
-    padding: 500px 0 48px 0;
+    padding: 470px 0 48px 0;
   }
 }
 .banner__content {
@@ -636,13 +802,13 @@ h6 {
   }
 }
 .banner__content-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 48px;
   height: 48px;
   background-color: #E8F8F4;
   border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .banner__content-text {
   display: flex;
@@ -655,62 +821,6 @@ h6 {
   color: #616161;
 }
 
-.plan-trip {
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-}
-.plan-trip__header {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: rgba(27, 27, 27, 0.9607843137);
-}
-.plan-trip__header > :is(:last-child) {
-  color: #616161;
-}
-.plan-trip__cities {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 20px;
-}
-@media only screen and (max-width: 1024px) {
-  .plan-trip__cities {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-@media only screen and (max-width: 640px) {
-  .plan-trip__cities {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-.plan-trip__cities-category {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
-.plan-trip__cities-category-img {
-  width: 140px;
-  height: 140px;
-  border-radius: 170px;
-}
-.plan-trip__cities-category-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: rgba(27, 27, 27, 0.9607843137);
-  gap: 8px;
-}
-.plan-trip__cities-category-content > :is(:last-child) {
-  color: rgb(117, 117, 117);
-}
-
 .featured-hotels {
   display: flex;
   flex-direction: column;
@@ -718,10 +828,10 @@ h6 {
 }
 .featured-hotels__header {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 24px;
   text-align: center;
   color: rgba(27, 27, 27, 0.9607843137);
 }
@@ -855,10 +965,10 @@ h6 {
 }
 .inspiration-trip__header {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 12px;
   text-align: center;
   color: rgba(27, 27, 27, 0.9607843137);
 }
@@ -1032,6 +1142,10 @@ h6 {
 .footer__menus-list-item a {
   color: #FAFBFB;
   text-decoration: none;
+  transition: all 0.2s ease;
+}
+.footer__menus-list-item a:hover {
+  color: #1CB78D;
 }
 .footer__menus-list-content {
   display: flex;
@@ -1065,18 +1179,6 @@ h6 {
   font-size: 1.6rem;
   color: #9e9e9e;
 }
-.footer__menus-list-content-form-btn {
-  border: none;
-  background-color: #1CB78D;
-  color: #FFFFFF;
-  border-radius: 10px;
-  padding: 14px 28px;
-}
-@media only screen and (max-width: 640px) {
-  .footer__menus-list-content-form-btn {
-    width: 100%;
-  }
-}
 .footer__content {
   display: flex;
   justify-content: space-between;
@@ -1096,8 +1198,14 @@ h6 {
 }
 @media only screen and (max-width: 640px) {
   .footer__content-logo {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
+}
+.footer__content-logo img {
+  max-width: 224px;
 }
 .footer__content-sosmed {
   display: flex;
@@ -1121,6 +1229,98 @@ h6 {
   cursor: pointer;
 }
 
+.airline-partners {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.airline-partners__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+  color: rgba(27, 27, 27, 0.9607843137);
+}
+.airline-partners__header > :is(:last-child) {
+  color: #616161;
+}
+.airline-partners__category {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .airline-partners__category {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.airline-partners__category-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #D9E0E4;
+  border-radius: 16px;
+  padding: 23px;
+}
+
+.plan-trip {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.plan-trip__header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgba(27, 27, 27, 0.9607843137);
+}
+.plan-trip__header > :is(:last-child) {
+  color: #616161;
+}
+.plan-trip__cities {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 20px;
+}
+@media only screen and (max-width: 1024px) {
+  .plan-trip__cities {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media only screen and (max-width: 640px) {
+  .plan-trip__cities {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.plan-trip__cities-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.plan-trip__cities-category-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 170px;
+}
+.plan-trip__cities-category-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgba(27, 27, 27, 0.9607843137);
+  gap: 8px;
+}
+.plan-trip__cities-category-content > :is(:last-child) {
+  color: rgb(117, 117, 117);
+}
+
 .trending-cities {
   display: flex;
   flex-direction: column;
@@ -1139,10 +1339,10 @@ h6 {
 }
 .trending-cities__header {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 12px;
   text-align: center;
   color: rgba(27, 27, 27, 0.9607843137);
 }
@@ -1193,41 +1393,6 @@ h6 {
   filter: brightness(0) invert(1);
 }
 
-.airline-partners {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-.airline-partners__header {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: rgba(27, 27, 27, 0.9607843137);
-}
-.airline-partners__header > :is(:last-child) {
-  color: #616161;
-}
-.airline-partners__category {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
-}
-@media only screen and (max-width: 768px) {
-  .airline-partners__category {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-.airline-partners__category-item {
-  display: flex;
-  justify-content: center;
-  border: 1.5px solid #D9E0E4;
-  border-radius: 16px;
-  padding: 23px;
-}
-
 .popular-destination {
   display: flex;
   flex-direction: column;
@@ -1235,10 +1400,10 @@ h6 {
 }
 .popular-destination__header {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 12px;
   text-align: center;
   color: rgba(27, 27, 27, 0.9607843137);
 }
@@ -1298,12 +1463,9 @@ h6 {
   .popular-destination__container-category-content-title h5 {
     font-size: 18px;
     line-height: 140%;
-    white-space: normal;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 .popular-destination__container-category-content-price {
@@ -1311,82 +1473,57 @@ h6 {
   align-items: center;
   gap: 4px;
 }
+@media only screen and (max-width: 1280px) {
+  .popular-destination__container-category-content-price p {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .popular-destination__container-category-content-price p {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .popular-destination__container-category-content-price p {
+    font-size: 12px;
+    line-height: 150%;
+  }
+}
 
-.driver-age-checkbox {
-  position: absolute;
-  top: 497px;
-  left: 184px;
+.car-brand {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  color: rgba(27, 27, 27, 0.9607843137);
+  flex-direction: column;
+  gap: 40px;
 }
-.driver-age-checkbox-form {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  position: relative;
-}
-.driver-age-checkbox-form input[type=checkbox] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-}
-.driver-age-checkbox-form input[type=checkbox]:checked + .driver-age-checkbox-indicator {
-  background-color: #1CB78D;
-  border-color: #1CB78D;
-}
-.driver-age-checkbox-form input[type=checkbox]:checked + .driver-age-checkbox-indicator::after {
-  opacity: 1;
-  transform: rotate(45deg) scale(1);
-}
-.driver-age-checkbox-indicator {
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  border: 1px solid #D9E0E4;
+.car-brand__header {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  flex-shrink: 0;
-  transition: all 0.2s ease;
-}
-.driver-age-checkbox-indicator::after {
-  content: "";
-  position: absolute;
-  left: 6px;
-  top: 2px;
-  width: 5px;
-  height: 10px;
-  border: solid #FFFFFF;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg) scale(0);
-  opacity: 0;
-  transition: all 0.2s ease;
-}
-.driver-age-checkbox-text {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.driver-age-checkbox-text span {
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
   color: rgba(27, 27, 27, 0.9607843137);
-  white-space: nowrap;
 }
-@media only screen and (max-width: 640px) {
-  .driver-age-checkbox-text span {
-    white-space: normal;
+.car-brand__header > :is(:last-child) {
+  color: #616161;
+}
+.car-brand__category {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .car-brand__category {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-.driver-age-checkbox-text img {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  cursor: pointer;
+.car-brand__category-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #D9E0E4;
+  border-radius: 16px;
+  padding: 23px;
 }
 
 /*# sourceMappingURL=style.css.map */

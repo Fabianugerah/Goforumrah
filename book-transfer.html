@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/svg/Logo.svg" />
     <title>Goforumrah</title>
   </head>
   <body>
@@ -132,24 +133,21 @@
               <p class="lg lg--regular">Drop-off Date & Time</p>
             </div>
           </div>
-          <button class="search-btn bs bs--bold">Search Car</button>
+          <button class="btn btn-search bs bs--bold">Search Car</button>
         </div>
       </div>
 
       <!-- Driver Age Checkbox -->
-      <div class="driver-age-checkbox">
-        <label class="driver-age-checkbox-form">
-          <input
-            type="checkbox"
-            class="driver-age-checkbox-input"
-            name="driver-age"
-            value="30-65"
-          />
-          <span class="driver-age-checkbox-indicator"></span>
-        </label>
-        <div class="driver-age-checkbox-text">
-          <span class="bs bs--medium">Driver aged between 30 - 65</span>
-          <img src="img/svg/Warning.svg" alt="Warning" />
+      <div class="driver-age-wrapper max-container padding-container">
+        <div class="driver-age-checkbox">
+          <label class="driver-age-checkbox-form">
+            <input type="checkbox" class="driver-age-checkbox-input" name="driver-age" value="30-65"/>
+            <span class="driver-age-checkbox-indicator"></span>
+          </label>
+          <div class="driver-age-checkbox-text">
+            <span class="bs bs--medium">Driver aged between 30 - 65</span>
+            <img src="img/svg/Warning.svg" alt="Warning" />
+          </div>
         </div>
       </div>
     </header>
@@ -174,42 +172,42 @@
         </div>
       </section>
 
-      <!-- Airlines Partnerts -->
-      <section class="airline-partners section-padding">
-        <div class="airline-partners__header">
+      <!-- Car Brands -->
+      <section class="car-brand section-padding">
+        <div class="car-brand__header">
           <h3 class="heading-3">Popular car hire brands</h3>
           <p class="lg lg--regular">
             With various partner airlines, we are ready to fly you anywhere.
           </p>
         </div>
 
-        <div class="airline-partners__category">
-          <div class="airline-partners__category-item">
+        <div class="car-brand__category">
+          <div class="car-brand__category-item">
             <img
               src="img/svg/Car-hire-brand-04.svg"
               alt="Car-hire-brand-04"
-              class="airline-partners__category-img"
+              class="car-brand__category-img"
             />
           </div>
-          <div class="airline-partners__category-item">
+          <div class="car-brand__category-item">
             <img
               src="img/svg/Car-hire-brand-03.svg"
               alt="Car-hire-brand-03"
-              class="airline-partners__category-img"
+              class="car-brand__category-img"
             />
           </div>
-          <div class="airline-partners__category-item">
+          <div class="car-brand__category-item">
             <img
               src="img/svg/Car-hire-brand-02.svg"
               alt="Car-hire-brand-02"
-              class="airline-partners__category-img"
+              class="car-brand__category-img"
             />
           </div>
-          <div class="airline-partners__category-item">
+          <div class="car-brand__category-item">
             <img
               src="img/svg/Car-hire-brand-01.svg"
               alt="Car-hire-brand-01"
-              class="airline-partners__category-img"
+              class="car-brand__category-img"
             />
           </div>
         </div>
@@ -218,9 +216,9 @@
       <!-- Featured Hotels Recommendation -->
       <section class="popular-destination section-padding">
         <div class="popular-destination__header">
-          <h3 class="heading-3">Popular car hire brands</h3>
+          <h3 class="heading-3">Popular destinations for book transfers</h3>
           <p class="lg lg--regular">
-            With various partner airlines, we are ready to fly you anywhere.
+            Know your destination like your own city.
           </p>
         </div>
 
@@ -393,9 +391,9 @@
           <div class="footer__menus-list">
             <h5 class="heading-5">Explore</h5>
             <div class="footer__menus-list-item">
-              <a href="#" class="bs bs--medium">Hotels</a>
-              <a href="#" class="bs bs--medium">Flights</a>
-              <a href="#" class="bs bs--medium">Book Transfer</a>
+              <a href="index.html" class="bs bs--medium">Hotels</a>
+              <a href="flight.html" class="bs bs--medium">Flights</a>
+              <a href="book-transfer.html" class="bs bs--medium">Book Transfer</a>
               <a href="#" class="bs bs--medium">Tour Package</a>
             </div>
           </div>
@@ -431,7 +429,7 @@
                   class="footer__menus-list-content-form-input bs bs--regular"
                   placeholder="Enter your email"
                 />
-                <button class="footer__menus-list-content-form-btn bs bs--bold">
+                <button class="btn btn-footer bs bs--bold">
                   Subscribe
                 </button>
               </form>

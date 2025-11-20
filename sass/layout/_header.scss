@@ -1,11 +1,9 @@
 .header {
+    @include flexCenter;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
-    display: flex;
     position: relative;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     height: 421px;
 

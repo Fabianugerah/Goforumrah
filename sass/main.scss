@@ -11,16 +11,19 @@
 @import "components/tabs";
 @import "components/search";
 @import "components/button";
+@import "components/driver-checkbox";
 
 // LAYOUT
 @import "layout/navbar";
 @import "layout/header";
 @import "layout/banner";
-@import "layout/plan-trip";
 @import "layout/featured-hotels";
 @import "layout/inspiration-trip";
 @import "layout/footer";
-@import "layout/trending-cities";
 @import "layout/airline-partners";
-@import "layout/popular-destination";
-@import "layout/driver-checkbox";
+
+// PAGES 
+@import "pages/hotel/plan-trip";
+@import "pages/flight/trending-cities";
+@import "pages/book-transfer/popular-destination";
+@import "pages/book-transfer/car-brand";

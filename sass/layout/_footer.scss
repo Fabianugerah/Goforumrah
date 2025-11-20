@@ -78,6 +78,11 @@
                 a {
                     color: $color-light;
                     text-decoration: none;
+                    transition: all .2s ease;
+
+                    &:hover {
+                        color: $color-toscha-01;
+                    }
                 }
             }
 
@@ -112,18 +117,6 @@
                             color: $color-subtle;
                         }
                     }
-
-                    &-btn {
-                        border: none;
-                        background-color: $color-toscha-01;
-                        color: $color-white;
-                        border-radius: 10px;
-                        padding: 14px 28px;
-
-                        @include respond(screen-sm) {
-                            width: 100%;
-                        }
-                    }
                 }
             }
         }
@@ -142,7 +135,6 @@
         }
 
         &-logo {
-            
 
             & > .copyright {
                 margin-top: 16px;
@@ -150,7 +142,12 @@
             }
 
             @include respond(screen-sm) {
-                text-align: center;
+                @include flexCenter;
+                flex-direction: column;
+            }
+
+            img {
+                max-width: 224px;
             }
         }
 
@@ -164,15 +161,14 @@
             }
 
             &-item {
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                @include flexCenter;
                 width: 48px;
                 height: 48px;
                 border-radius: 40px;
                 border: none;
                 background-color: $color-navi-02;
                 cursor: pointer;
+
             }
         }
     }

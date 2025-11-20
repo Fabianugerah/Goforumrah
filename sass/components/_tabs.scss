@@ -1,10 +1,8 @@
 .tabs {
+    @include flexCenter;
     position: absolute;
     top: 40px;
-    display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
     background-color: $color-white;
     border-radius: 1000px;
     border: 1px solid $color-input;

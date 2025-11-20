@@ -26,12 +26,13 @@
   justify-content: center;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 48px;
+  
 
   & > p {
     color: $color-secondary;
   }
 }
+
 .section-padding {
   padding: 48px 0;
 }

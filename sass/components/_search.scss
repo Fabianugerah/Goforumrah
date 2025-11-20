@@ -69,6 +69,7 @@
         gap: 12px;
         padding: 12px 20px;
         min-width: 0;
+        cursor: pointer;
 
         @include respond(screen-xl) {
             width: 100%;
@@ -93,6 +94,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            cursor: pointer;
 
             @include respond(screen-xl) {
                 width: 100%;
@@ -152,6 +154,10 @@
     @include respond(screen-md) {
         top: 120px;
     }
+
+    @include respond(screen-xs) {
+        top: 165px;
+    }
 }
 
 .dot {
@@ -192,10 +198,16 @@
         margin: -24px -24px -4px -24px;
     }
 
+    @include respond(screen-xs) {
+        flex-direction: column;
+        align-items: flex-start;
+        left: -3px;
+    }
+
+
+
     &-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexCenter;
         gap: 16px;
         cursor: pointer;
         position: relative;
@@ -226,16 +238,18 @@
     }
 
     &-indicator {
+        @include flexCenter;
         width: 20px;
         height: 20px;
         border: 1px solid $color-input;
         border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         position: relative;
         flex-shrink: 0;
         transition: all 0.3s ease;
+
+        &:hover {
+            border: 1px solid $color-toscha-01;
+        }
 
         &::after {
             content: '';

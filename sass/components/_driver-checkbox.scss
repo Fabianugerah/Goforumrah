@@ -1,11 +1,36 @@
-.driver-age-checkbox {
+.driver-age-wrapper {
     position: absolute;
+    width: 100%;
     top: 497px;
-    left: 184px;
+    z-index: 998;
+
+    @include respond(screen-xl) {
+        top: 810px;
+    }
+
+    @include respond(screen-md) {
+        top: 855px;
+    }
+
+    @include respond(screen-sm) {
+        top: 860px;
+    }
+
+    @include respond(screen-xs) {
+        top: 900px;
+    }
+}
+
+.driver-age-checkbox {
     display: flex;
     align-items: center;
+    padding-left: 64px;
     gap: 16px;
     color: $color-primary;
+
+     @include respond(screen-md) {
+        padding-left: 34px;
+    }
 
     &-form {
         display: flex;
@@ -33,23 +58,25 @@
     }
 
     &-indicator {
+        @include flexCenter;
         width: 20px;
         height: 20px;
         border-radius: 4px;
         background-color: $color-white;
         border: 1px solid $color-input;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         position: relative;
         flex-shrink: 0;
         transition: all 0.2s ease;
 
+        &:hover {
+            border-color: $color-toscha-01;
+        }
+
         &::after {
             content: '';
             position: absolute;
-            left: 6px;
-            top: 2px;
+            left: 7.5px;
+            top: 3px;
             width: 5px;
             height: 10px;
             border: solid $color-white;

@@ -13,12 +13,9 @@
     }
 
     &__header {
-        display: flex;
+        @include flexCenter;
         flex-direction: column;
         gap: 12px;
-        align-items: center;
-        
-        justify-content: center;
         text-align: center;
         color: $color-primary;
 

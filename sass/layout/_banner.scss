@@ -16,11 +16,15 @@
         padding: 168px 0 48px 0;
 
         @include respond(screen-xl) {
-            padding: 400px 0 48px 0;
+            padding: 380px 0 48px 0;
+        }
+
+        @include respond(screen-md) {
+            padding: 430px 0 48px 0;
         }
 
         @include respond(screen-xs) {
-            padding: 500px 0 48px 0;
+            padding: 470px 0 48px 0;
         }
 
     }
@@ -41,13 +45,11 @@
         }
 
         &-icon {
+            @include flexCenter;
             width: 48px;
             height: 48px;
             background-color: $color-toscha-05;
             border-radius: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         &-text {

@@ -20,13 +20,13 @@
     }
 
     &__menu {
-    display: flex;
-    align-items: center;
+        @include flexCenter;
 
         &-item {
             display: flex;
             align-items: center;
             gap: 4px;
+            cursor: pointer;
 
             &-text {
                 font-size: 1.4rem;
