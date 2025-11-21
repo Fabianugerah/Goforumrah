@@ -167,8 +167,12 @@
                 border-radius: 40px;
                 border: none;
                 background-color: $color-navi-02;
+                transition: all .2s ease;
                 cursor: pointer;
 
+                &:hover{
+                    background-color: $color-navi-03;
+                }
             }
         }
     }
