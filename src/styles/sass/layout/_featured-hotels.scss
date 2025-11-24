@@ -1,0 +1,148 @@
+.featured-hotels {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    &__header {
+        @include flexCenter;
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+        color: $color-primary;
+
+        &-tabs {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            border-bottom: 1px solid $color-separator;
+
+            &-menu {
+                @include flexCenter;
+                color: $color-navi-01;
+                border: none;
+                background-color: $color-white;
+                border-bottom: 1px solid $color-input;
+                width: 137px;
+                padding: 16px;
+                gap: 8px;
+                cursor: pointer;
+
+                &--active {
+                    color: $color-toscha-01;
+                    border-bottom: 2px solid $color-toscha-01;
+                    gap: 10px;
+                }
+            }
+
+            @include respond(screen-sm) {
+                &-menu:nth-child(n + 4) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+
+        @include respond(screen-md) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        &-category {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 24px;
+            width: 100%;
+            height: 100%;
+
+            &-img {
+                width: 100%;
+                border-radius: 16px;
+                display: block;
+                object-fit: cover;
+            }
+
+            &-content {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                color: $color-primary;
+                gap: 16px;
+                flex: 1;
+                justify-content: space-between;
+
+
+                &-title {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    width: 100%;
+                    overflow: hidden;
+                    flex: 1;
+
+                    h5 {
+                        display: block;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        width: 100%;
+
+                        @include respond(screen-lg) {
+                            font-size: 20px;
+                        }
+
+                        @include respond(screen-xs) {
+                            font-size: 18px;
+                            line-height: 140%;
+                            white-space: normal;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+
+                &-location {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    width: 100%;
+                    overflow: hidden;
+                    margin-top: auto;
+
+                    p {
+                        color: $color-subtle;
+                        display: block;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        width: 100%;
+
+                        @include respond(screen-lg) {
+                            font-size: 14px;
+                        }
+
+                        @include respond(screen-xs) {
+                            font-size: 12px;
+                            line-height: 150%;
+                        }
+                    }
+                }
+
+                &-price {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    margin-top: auto;
+                }
+            }
+        }
+    }
+}

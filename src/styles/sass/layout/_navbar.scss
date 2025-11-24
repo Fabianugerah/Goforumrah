@@ -1,0 +1,63 @@
+.navbar {
+    background-color: $color-navi-01;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 23px 72px;
+
+    @include respond(screen-lg) {
+        padding: 23px 40px;
+    }
+
+    @include respond(screen-sm) {
+        padding: 23px 20px;
+    }
+
+    &__logo {
+        width: 145px;
+        height: 26px;
+    }
+
+    &__menu {
+        @include flexCenter;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+
+            &-text {
+                font-size: 1.4rem;
+            }
+
+            &-user {
+                background-color: $color-light;
+                padding: 5px;
+                border-radius: 100px;
+            }
+
+            &:not(:last-child) {
+                padding: 0 24px;
+                border-right: 1px solid $color-navi-03;
+
+                @include respond(screen-md) {
+                    display: none;
+                }
+            }
+
+            &:is(:last-child) {
+                padding-left: 24px;
+                gap: 24px;
+            }
+
+            img[alt="Heart Icon"] {
+                @include respond(screen-xs) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+

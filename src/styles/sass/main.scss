@@ -1,0 +1,31 @@
+// ABSTRACTS
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+// BASE
+@import "base/fonts";
+@import "base/typography";
+@import "base/base";
+@import "base/utilities";
+
+
+// COMPONENTS
+@import "components/tabs";
+@import "components/search";
+@import "components/button";
+@import "components/driver-checkbox";
+
+// LAYOUT
+@import "layout/navbar";
+@import "layout/header";
+@import "layout/banner";
+@import "layout/featured-hotels";
+@import "layout/inspiration-trip";
+@import "layout/footer";
+@import "layout/airline-partners";
+
+// PAGES 
+@import "pages/hotel/plan-trip";
+@import "pages/flight/trending-cities";
+@import "pages/book-transfer/popular-destination";
+@import "pages/book-transfer/car-brand";

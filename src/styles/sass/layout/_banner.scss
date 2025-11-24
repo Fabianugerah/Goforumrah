@@ -1,0 +1,68 @@
+.banner {
+    display: flex;
+    align-items: flex-start;
+    padding: 91px 0 48px 0;
+    gap: 10px;
+
+    @include respond(screen-xl) {
+        padding: 310px 0 48px 0;
+    }
+
+    @include respond(screen-xs) {
+        padding: 330px 0 48px 0;
+    }
+
+    &--book-transfer {
+        padding: 168px 0 48px 0;
+
+        @include respond(screen-xl) {
+            padding: 380px 0 48px 0;
+        }
+
+        @include respond(screen-md) {
+            padding: 430px 0 48px 0;
+        }
+
+        @include respond(screen-xs) {
+            padding: 470px 0 48px 0;
+        }
+
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        padding: 24px;
+        gap: 20px;
+        width: 100%;
+        background-color: $color-toscha-06;
+        border: 1px solid $color-toscha-03;
+        border-radius: 12px;
+
+        @include respond(screen-sm) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &-icon {
+            @include flexCenter;
+            width: 48px;
+            height: 48px;
+            background-color: $color-toscha-05;
+            border-radius: 50px;
+        }
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            color: $color-primary;
+            margin-right: auto;
+
+            & > :is(:last-child) {
+                color: $color-secondary;
+            }
+        }
+    }
+
+}

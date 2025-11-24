@@ -1,0 +1,102 @@
+// HEADING
+.heading-1 {
+    font-weight: 600;
+    line-height: 120%;
+    font-size: 5.2rem;
+}
+
+.heading-2 {
+    font-weight: 600;
+    line-height: 120%;
+    font-size: 4.4rem;
+}
+
+.heading-3 {
+    font-weight: 600;
+    line-height: 120%;
+    font-size: 3.6rem;
+}
+
+.heading-4 {
+    font-weight: 600;
+    line-height: 120%;
+    font-size: 2.8rem;
+}
+
+.heading-5 {
+    font-weight: 600;
+    line-height: 120%;
+    font-size: 2.2rem;
+}
+
+// X-Large
+.xl {
+    font-size: 1.8rem;
+    line-height: 140%;
+
+    &--bold{
+        font-weight: 600;
+    }
+
+    &--medium{
+        font-weight: 500;
+    }
+
+    &--regular{
+        font-weight: 400;
+    }
+}
+
+// Large
+.lg {
+    font-size: 1.6rem;
+    line-height: 140%;
+
+    &--bold{
+        font-weight: 600;
+    }
+
+    &--medium{
+        font-weight: 500;
+    }
+
+    &--regular{
+        font-weight: 400;
+    }
+}
+
+// Base
+.bs {
+    font-size: 1.4rem;
+    line-height: 150%;
+
+    &--bold{
+        font-weight: 600;
+    }
+
+    &--medium{
+        font-weight: 500;
+    }
+
+    &--regular{
+        font-weight: 400;
+    }
+}
+
+// Small
+.sm {
+    font-size: 1.2rem;
+    line-height: 150%;
+
+    &--bold{
+        font-weight: 600;
+    }
+
+    &--medium{
+        font-weight: 500;
+    }
+
+    &--regular{
+        font-weight: 400;
+    }
+}

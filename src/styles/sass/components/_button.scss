@@ -1,0 +1,39 @@
+.btn-link {
+    text-decoration: none;
+    color: $color-toscha-01;
+    transition: all .2s ease;
+
+    &:hover {
+        color: $color-toscha-02;
+    }
+}
+
+.btn {
+    background-color: $color-toscha-01;
+    border: none;
+    color: $color-white;
+    transition: all .2s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-toscha-02;
+    }
+
+    &-search {
+        padding: 20px 40px;
+        border-radius: 1000px;
+
+        @include respond(screen-xl) {
+            width: 100%;
+        }
+    }
+
+    &-footer {
+        border-radius: 10px;
+        padding: 14px 28px;
+
+        @include respond(screen-sm) {
+            width: 100%;
+        } 
+    }
+}

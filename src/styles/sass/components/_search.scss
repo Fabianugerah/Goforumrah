@@ -1,0 +1,267 @@
+.search {
+    position: absolute;
+    width: 100%;
+    top: 379px;
+
+    &-box {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $color-subtle;
+        background-color: $color-white;
+        border-radius: 1000px;
+        border: 1px solid $color-input;
+        box-shadow: 0px 12px 44px rgba(5, 44, 71, 0.05);
+        padding: 12px;
+        gap: 16px;
+        z-index: 999;
+
+        @include respond(screen-xl) {
+            padding: 24px;
+            flex-direction: column;
+            border-radius: 24px;
+            gap: 16px;
+        }
+
+        @include respond(screen-xl) {
+            margin-top: 30px;
+        }
+
+    }
+
+    &-container {
+        display: flex;
+        align-items: center;
+        flex: 1 1;
+        gap: 16px;
+
+        & > :not(:last-child) {
+            border-right: 1px solid $color-separator;
+
+            @include respond(screen-xl) {
+                border-right: none;
+            }
+        }
+
+        @include respond(screen-xl) {
+            width: 100%;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        &--flight {
+            .search-item {
+                flex: 2 1;
+                align-items: center;
+
+                &:is(:first-child) {
+                    border-right: none !important;
+                }
+            }
+        }
+    }
+
+    &-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 20px;
+        min-width: 0;
+        cursor: pointer;
+
+        @include respond(screen-xl) {
+            width: 100%;
+            border-bottom: 1px solid $color-separator;
+            padding: 24px 20px;
+            align-items: flex-start;
+        }
+
+        &--full {
+            flex: 2;
+        }
+
+        &--small {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+        }
+
+        &-wrapper {
+            min-width: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+
+            @include respond(screen-xl) {
+                width: 100%;
+                border-bottom: 1px solid $color-separator;
+                padding: 16px 0;
+            }
+        }
+
+        &-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        &-input {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: $color-primary;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.5;
+            width: 100%;
+
+            &::placeholder {
+                font-size: 1.6rem;
+                color: $color-subtle;
+            }
+        }
+    }
+
+    &-btn {
+        padding: 20px 40px;
+        background-color: $color-toscha-01;
+        color: $color-white;
+        border-radius: 1000px;
+        border: none;
+
+        @include respond(screen-xl) {
+            width: 100%;
+        }
+    }
+}
+
+.arrow-leftright-icon {
+    border-radius: 100px;
+    background-color: $color-white;
+    border: 1px solid $color-light !important;
+    padding: 8px;
+    flex-shrink: 0;
+
+    @include respond(screen-xl) {
+        position: absolute;
+        top: 78px;
+    }
+
+    @include respond(screen-md) {
+        top: 120px;
+    }
+
+    @include respond(screen-xs) {
+        top: 165px;
+    }
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  background-color: $color-separator;
+  border-radius: 50%;
+}
+
+// Flight Type Radio Buttons
+.flight-type {
+    display: flex;
+    position: absolute;
+    padding: 12px 24px;
+    background-color: $color-white;
+    border: 1px solid $color-input;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    top: -48px;
+    left: 64px;
+    gap: 24px;
+
+    @include respond(screen-xl) {
+       top: -47px; 
+    }
+
+    @include respond(screen-md) {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid $color-separator;
+        padding: 16px 24px;
+        justify-content: space-around;
+        margin: -24px -24px -4px -24px;
+    }
+
+    @include respond(screen-xs) {
+        flex-direction: column;
+        align-items: flex-start;
+        left: -3px;
+    }
+
+
+
+    &-item {
+        @include flexCenter;
+        gap: 16px;
+        cursor: pointer;
+        position: relative;
+
+        input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            
+            &:checked + .flight-type-indicator{
+                border-color: $color-toscha-01;
+                
+                &::after {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            &:checked ~ span {
+                color: $color-toscha-01;
+            }
+        }
+
+        span {
+            color: $color-primary;
+            transition: all 0.3s ease;
+        }
+    }
+
+    &-indicator {
+        @include flexCenter;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $color-input;
+        border-radius: 50%;
+        position: relative;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+
+        &:hover {
+            border: 1px solid $color-toscha-01;
+        }
+
+        &::after {
+            content: '';
+            width: 12.5px;
+            height: 12.5px;
+            align-items: center;
+            justify-content: center;
+            background-color: $color-toscha-01;
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.3s ease;
+        }
+    }
+}

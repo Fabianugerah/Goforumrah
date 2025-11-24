@@ -1,0 +1,83 @@
+.trending-cities {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 140px 0 48px 0;
+
+    @include respond(screen-xl) {
+        padding: 520px 0 48px 0;
+    }
+
+    @include respond(screen-md) {
+        padding: 560px 0 48px 0;
+    }
+
+    &__header {
+        @include flexCenter;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        color: $color-primary;
+
+        & > :is(:last-child) {
+            color: $color-secondary;
+        }
+    }
+
+    &__category {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        @include respond(screen-md) {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        @include respond(screen-md) {
+           
+        }
+
+        &-card {
+            display: flex;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            width: 100%;
+            height: 213px;
+            border-radius: 16px;
+
+            &--1 {
+                background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.4), rgba(5, 44, 71, 0.8)),
+                url(/img/trending-1.png);
+            }
+
+            &--2 {
+                background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.4), rgba(5, 44, 71, 0.8)),
+                url(/img/trending-2.png);
+            }
+
+            &--3 {
+                background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.4), rgba(5, 44, 71, 0.8)),
+                url(/img/trending-3.png);
+            }
+
+            &-content {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                padding-top: 127px;
+                padding-left: 24px;
+
+                &-location {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    &-icon {
+                        filter: brightness(0) invert(1);
+                    }
+                }
+            }
+        }
+    }
+}

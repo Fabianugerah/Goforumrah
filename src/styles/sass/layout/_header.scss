@@ -1,0 +1,44 @@
+.header {
+    @include flexCenter;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    text-align: center;
+    height: 421px;
+
+    &--hotel {
+        background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.6)),
+        url(/img/Bg-Hotel.png);
+    }
+
+    &--flight {
+        background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.6)),
+        url(/img/Bg-Flight.png);
+    }
+
+    &--book-transfer {
+        background-image: linear-gradient(rgba(5, 44, 71, 0), rgba(5, 44, 71, 0.6)),
+        url(/img/Bg-Car.png);
+    }
+
+    @include respond(screen-xl) {
+        height: 520px;
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        gap: 16px;
+        margin-top: 8rem;
+
+        @include respond(screen-xl) {
+            margin-top: 0;
+        }
+    }
+}
+
+
+    

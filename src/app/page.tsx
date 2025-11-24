@@ -1,66 +1,34 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Tabs from '@/components/Tabs';
+import SearchBox from '@/components/SearchBox';
+import Banner from '@/components/Banner';
+import PlanTrip from '@/components/PlanTrip';
+import FeaturedHotels from '@/components/FeaturedHotels';
+import InspirationTrip from '@/components/InspirationTrip';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <header className="header header--hotel">
+        <Tabs />
+        <div className="header__title padding-container">
+          <h1 className="heading-1">Find your next stay</h1>
+          <p className="xl xl--medium">
+            Search low prices on hotels, homes and much more...
           </p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        <SearchBox type="hotel" />
+      </header>
+
+      <main className="main max-container padding-container">
+        <Banner 
+          icon="/img/svg/FaceMask.svg"
+          title="Keep calm with health protocol"
+          description="Get the advice you need. Check the latest COVID-19 restrictions before you travel."
+        />
+        <PlanTrip />
+        <FeaturedHotels />
+        <InspirationTrip />
       </main>
-    </div>
+    </>
   );
 }

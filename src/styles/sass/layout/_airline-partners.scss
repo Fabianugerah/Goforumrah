@@ -1,0 +1,34 @@
+.airline-partners {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    &__header {
+        @include flexCenter;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        color: $color-primary;
+
+        & > :is(:last-child) {
+            color: $color-secondary;
+        }
+    }
+
+    &__category {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+
+        @include respond(screen-md) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        &-item {
+            @include flexCenter;
+            border: 1.5px solid $color-input;
+            border-radius: 16px;
+            padding: 23px;
+        }
+    }
+}
