@@ -16,23 +16,28 @@
   animation: dropdownSlideIn 0.2s ease-out;
 
   @include respond(screen-xl) {
-    position: fixed;
-    top: auto;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    max-height: 70vh;
+    top: calc(100% + 20px);
+  }
+
+  @include respond(screen-md) {
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @include respond(screen-sm) {
+    top: calc(100% + 15px);
   }
 
   &--datepicker {
     width: auto;
     right: auto;
 
-    @include respond(screen-xl) {
-      min-width: auto;
-      width: calc(100vw - 40px);
-      left: 20px;
-      right: 20px;
+    @include respond(screen-md) {
+      right: 0;
+      left: 0;
+      width: 100%;
     }
   }
 
@@ -40,10 +45,10 @@
     width: auto;
     right: 0;
 
-    @include respond(screen-xl) {
-      width: calc(100vw - 40px);
-      left: 20px;
-      right: 20px;
+    @include respond(screen-md) {
+      right: 0;
+      left: 0;
+      width: 100%;
     }
   }
 
@@ -54,6 +59,10 @@
     gap: 10px;
     padding: 20px 20px 0 20px;
     color: $color-primary;
+
+    @include respond(screen-md) {
+      padding: 16px 16px 0 16px;
+    }
   }
 }
 
@@ -86,6 +95,14 @@
   transition: all 0.2s ease;
   text-align: left;
   width: 100%;
+
+  @include respond(screen-md) {
+    padding: 14px 16px;
+  }
+
+  @include respond(screen-md) {
+    padding: 14px 16px;
+  }
 
   &:hover {
     background-color: $color-light;
@@ -132,8 +149,9 @@
   gap: 20px;
   padding: 20px;
 
-  @include respond(screen-md) {
+  @include respond(screen-sm) {
     grid-template-columns: 1fr;
+    padding: 10px;
   }
 }
 
@@ -152,6 +170,10 @@
     color: $color-primary;
     flex: 1;
     text-align: center;
+
+    @include respond(screen-xs) {
+      font-size: 1.4rem;
+    }
   }
 
   &-btn {
@@ -186,6 +208,10 @@
   color: $color-subtle;
   padding: 4px;
   font-size: 1.2rem;
+
+  @include respond(screen-xs) {
+    font-size: 1rem;
+  }
 }
 
 .datepicker-days {
@@ -207,6 +233,16 @@
   z-index: 2;
   padding: 7px 10px;
 
+  @include respond(screen-md) {
+    font-size: 1.4rem;
+    padding: 4px 6px;
+  }
+
+  @include respond(screen-xs) {
+    font-size: 1.2rem;
+    padding: 2px 4px;
+  }
+
   &:hover:not(&--disabled):not(&--selected) {
     background-color: $color-toscha-05;
     color: $color-toscha-01;
@@ -219,7 +255,7 @@
 
   &--selected-start {
     background-color: $color-toscha-01;
-    color: white;
+    color: $color-white;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
     border-top-right-radius: 0;
@@ -233,7 +269,7 @@
 
   &--selected-end {
     background-color: $color-toscha-01;
-    color: white;
+    color: $color-white;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     border-top-left-radius: 0;

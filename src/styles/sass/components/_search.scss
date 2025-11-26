@@ -2,7 +2,7 @@
     position: absolute;
     width: 100%;
     top: 379px;
-
+    
     &-box {
         position: relative;
         display: flex;
@@ -78,6 +78,10 @@
             align-items: flex-start;
         }
 
+        @include respond(screen-sm) {
+            padding: 24px 12px;
+        }
+
         &--full {
             flex: 2;
         }
@@ -99,7 +103,11 @@
             @include respond(screen-xl) {
                 width: 100%;
                 border-bottom: 1px solid $color-separator;
-                padding: 12px 6px;
+                padding: 6px;
+            }
+
+            @include respond(screen-sm) {
+                padding: 6px 2px;
             }
 
             &-container {
@@ -121,12 +129,13 @@
             background-color: transparent;
             color: $color-primary;
             font-size: 1.6rem;
-            font-weight: 400;
+            font-weight: 500;
             line-height: 1.5;
             width: 100%;
 
             &::placeholder {
                 font-size: 1.6rem;
+                font-weight: 400;
                 color: $color-subtle;
             }
         }

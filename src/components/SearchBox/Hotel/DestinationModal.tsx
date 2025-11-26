@@ -13,7 +13,7 @@ const popularDestinations = [
   { name: 'Makkah Clock Royal Tower', area: 'Makkah, Al Mukarramah Province, Saudi Arabia' },
   { name: 'Pullman ZamZam Makkah', area: 'Makkah, Al Mukarramah Province, Saudi Arabia' },
   { name: 'Swissôtel Al Maqam Makkah', area: 'Makkah, Al Mukarramah Province, Saudi Arabia' },
-  { name: 'Dar Al Tawhid Intercontinental Makkah, An IHSG...', area: 'Makkah, Al Mukarramah Province, Saudi Arabia' },
+  { name: 'Dar Al Tawhid Intercontinental Makkah, An IHSG', area: 'Makkah, Al Mukarramah Province, Saudi Arabia' },
   
 ];
 
