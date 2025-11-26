@@ -1,7 +1,7 @@
 // src/components/SearchBox/index.tsx
 'use client';
 
-import HotelSearch from './HotelSearch';
+import HotelSearch from './Hotel/HotelSearch';
 import FlightSearch from './FlightSearch';
 import TransferSearch from './TransferSearch';
 

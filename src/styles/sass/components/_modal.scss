@@ -1,0 +1,326 @@
+// Dropdown container
+.search-item--dropdown,
+.search-item-wrapper.search-item--dropdown {
+  position: relative;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: calc(100% + 40px);
+  left: 0;
+  right: 0;
+  background-color: $color-white;
+  border-radius: 16px;
+  box-shadow: 0 12px 44px rgba(5, 44, 71, 0.08);
+  z-index: 1000;
+  animation: dropdownSlideIn 0.2s ease-out;
+
+  @include respond(screen-xl) {
+    position: fixed;
+    top: auto;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    max-height: 70vh;
+  }
+
+  &--datepicker {
+    width: auto;
+    right: auto;
+
+    @include respond(screen-xl) {
+      min-width: auto;
+      width: calc(100vw - 40px);
+      left: 20px;
+      right: 20px;
+    }
+  }
+
+  &--guest {
+    width: auto;
+    right: 0;
+
+    @include respond(screen-xl) {
+      width: calc(100vw - 40px);
+      left: 20px;
+      right: 20px;
+    }
+  }
+
+  // Dropdown Header
+  &-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 20px 0 20px;
+    color: $color-primary;
+  }
+}
+
+@keyframes dropdownSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Dropdown List
+.search-dropdown-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background-color: $color-white;
+  border-bottom: 1px solid $color-separator;
+  color: $color-primary;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  width: 100%;
+
+  &:hover {
+    background-color: $color-light;
+  }
+
+  img {
+    flex-shrink: 0;
+  }
+
+  &:is(:last-child) {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+
+  &-text {
+    flex: 1;
+    min-width: 0;
+
+    p:first-child {
+      margin-bottom: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    p:last-child {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.search-dropdown-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: $color-subtle;
+}
+
+// Date Picker Dropdown Styles
+.datepicker-months {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+
+  @include respond(screen-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.datepicker-month {
+  display: flex;
+  flex-direction: column;
+}
+
+.datepicker-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+
+  p {
+    color: $color-primary;
+    flex: 1;
+    text-align: center;
+  }
+
+  &-btn {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: $color-separator;
+    }
+
+    &--left {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.datepicker-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 8px 0;
+}
+
+.datepicker-weekday {
+  text-align: center;
+  color: $color-subtle;
+  padding: 4px;
+  font-size: 1.2rem;
+}
+
+.datepicker-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.datepicker-day {
+  aspect-ratio: 1;
+  border: none;
+  background: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: $color-primary;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 2;
+  padding: 7px 10px;
+
+  &:hover:not(&--disabled):not(&--selected) {
+    background-color: $color-toscha-05;
+    color: $color-toscha-01;
+  }
+
+  &--empty {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &--selected-start {
+    background-color: $color-toscha-01;
+    color: white;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    z-index: 5;
+
+    &:hover {
+      background-color: $color-toscha-02;
+    }
+  }
+
+  &--selected-end {
+    background-color: $color-toscha-01;
+    color: white;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    z-index: 5;
+
+    &:hover {
+      background-color: $color-toscha-02;
+    }
+  }
+
+  &--in-range {
+    background-color: $color-navi-05;
+    border-radius: 0%;
+  }
+
+  &--disabled {
+    color: $color-separator;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Guest Counter Styles
+.guest-counter-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.guest-counter-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color-white;
+  padding: 16px 20px;
+
+  &:is(:last-child) {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+
+  &-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+.counter-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50px;
+  padding: 2px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: $color-toscha-01;
+
+  &:hover:not(&--disabled):not(:disabled) {
+    background-color: $color-toscha-02;
+  }
+
+  &--disabled,
+  &:disabled {
+    background-color: $color-subtle;
+    cursor: not-allowed;
+  }
+}
+
+.counter-value {
+  min-width: 30px;
+  text-align: center;
+  color: $color-primary;
+}
+
+.guest-counter-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.guest-counter-info {
+  color: $color-primary;
+}
