@@ -118,6 +118,10 @@ export default function HotelSearch() {
           />
           <p
             className="lg lg--regular"
+            style={{ 
+              color:  checkIn ? '#1B1B1BF5' : undefined,
+              cursor: 'pointer'
+            }}
             onClick={() => {
               setShowDateDropdown(!showDateDropdown);
               setShowDestinationDropdown(false);
@@ -161,15 +165,30 @@ export default function HotelSearch() {
                 height={24}
                 className="search-item-icon"
               />
-              <p className="lg lg--regular">{adults} adult{adults > 1 ? 's' : ''}</p>
+              <p className="lg lg--regular"
+                style={{ 
+                color:  adults > 1 ? '#1B1B1BF5' : undefined,
+                cursor: 'pointer'
+                }}
+              >{adults} adult{adults > 1 ? 's' : ''}</p>
             </div>
             <div className="dot"></div>
             <div className="search-item--small">
-              <p className="lg lg--regular">{children} children</p>
+              <p className="lg lg--regular"
+              style={{ 
+                color:  children > 0 ? '#1B1B1BF5' : undefined,
+                cursor: 'pointer'
+              }}
+              >{children} children</p>
             </div>
             <div className="dot"></div>
             <div className="search-item--small">
-              <p className="lg lg--regular">{rooms} room{rooms > 1 ? 's' : ''}</p>
+              <p className="lg lg--regular"
+              style={{ 
+                color:  rooms > 1 ? '#1B1B1BF5' : undefined,
+                cursor: 'pointer'
+              }}
+              >{rooms} room{rooms > 1 ? 's' : ''}</p>
             </div>
           </div>
 

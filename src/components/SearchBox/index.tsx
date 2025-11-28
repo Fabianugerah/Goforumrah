@@ -2,7 +2,7 @@
 'use client';
 
 import HotelSearch from './Hotel/HotelSearch';
-import FlightSearch from './FlightSearch';
+import FlightSearch from './Flight/FlightSearch';
 import TransferSearch from './TransferSearch';
 
 interface SearchBoxProps {
