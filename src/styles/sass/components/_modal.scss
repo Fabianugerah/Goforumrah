@@ -361,6 +361,7 @@
 
 .guest-counter-info {
   color: $color-primary;
+  text-align: left;
 }
 
 // Cabin Class Styles
@@ -384,19 +385,8 @@
     background-color: $color-light;
   }
 
-  &:last-child {
-    border-bottom: none;
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-  }
-
   &--active {
-    background-color: $color-toscha-06;
     color: $color-toscha-01;
-
-    &:hover {
-      background-color: $color-toscha-05;
-    }
   }
 
   p {
@@ -416,61 +406,24 @@
 // Passenger & Cabin Side by Side Layout
 .passenger-cabin-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; // 2 kolom sama besar
+  grid-template-columns: 1fr 1fr;
   gap: 0;
   width: 100%;
+  padding-bottom: 20px;
 
   @include respond(screen-md) {
-    grid-template-columns: 1fr; // 1 kolom di mobile
+    grid-template-columns: 1fr;
+    padding-bottom: 0;
   }
 }
 
 .passenger-section {
-  border-right: 1px solid $color-separator;
-
   @include respond(screen-md) {
     border-right: none;
-    border-bottom: 1px solid $color-separator;
-  }
-
-  .search-dropdown-header {
-    padding: 20px;
-    border-bottom: 1px solid $color-separator;
-
-    @include respond(screen-md) {
-      padding: 16px;
-    }
-  }
-
-  .guest-counter-list {
-    padding: 0;
-  }
-
-  .guest-counter-item {
-    padding: 20px;
-    border-bottom: 1px solid $color-separator;
-
-    &:last-child {
-      border-bottom: none;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-
-    @include respond(screen-md) {
-      padding: 16px;
-    }
   }
 }
 
 .cabin-section {
-  .search-dropdown-header {
-    padding: 20px;
-    border-bottom: 1px solid $color-separator;
-
-    @include respond(screen-md) {
-      padding: 16px;
-    }
-  }
 
   .cabin-class-list {
     padding: 0;
@@ -480,34 +433,23 @@
     padding: 20px;
     border-bottom: 1px solid $color-separator;
 
-    &:last-child {
-      border-bottom: none;
-      border-bottom-left-radius: 16px;
-      border-bottom-right-radius: 16px;
-    }
-
     @include respond(screen-md) {
       padding: 16px;
       
       &:last-child {
         border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
       }
     }
   }
 }
 
 // Update width dropdown untuk passenger
-.search-dropdown--guest {
-  width: 578px !important; // Lebih lebar untuk 2 kolom
+.search-dropdown--guest-flight {
+  width: 578px !important;
   max-width: 90vw;
 
   @include respond(screen-lg) {
-    width: 700px !important;
-  }
-
-  @include respond(screen-md) {
     width: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
   }
 }

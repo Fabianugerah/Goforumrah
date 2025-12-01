@@ -38,7 +38,7 @@ export default function FlightLocationDropdown({ searchQuery, onSelect }: Flight
               className="search-dropdown-item"
               onClick={() => onSelect(dest.name)}
             >
-              <Image src="/img/svg/AirplaneTakeoff.svg" alt="Flight" width={20} height={20} />
+              <Image src="/img/svg/Flight.svg" alt="Flight" width={20} height={20} />
               <div className="search-dropdown-item-text">
                 <p className="bs bs--medium">{dest.name} ({dest.code})</p>
                 <p className="sm sm--regular">{dest.airport}</p>

@@ -45,7 +45,7 @@ export default function FlightPassengerDropdown({
   ];
 
   return (
-    <div className="search-dropdown search-dropdown--guest">
+    <div className="search-dropdown search-dropdown--guest search-dropdown--guest-flight">
       {/* Container untuk 2 kolom */}
       <div className="passenger-cabin-container">
         {/* LEFT SIDE - Passenger Section */}
@@ -59,13 +59,13 @@ export default function FlightPassengerDropdown({
             <div className="guest-counter-item">
               <div className="guest-counter-info">
                 <p className="lg lg--medium">Adult</p>
-                <p className="sm sm--regular" style={{ color: '#9e9e9e' }}>Age 12+</p>
+                <p className="bs bs--regular">Age 12+</p>
               </div>
               <div className="guest-counter-controls">
                 <button
-                  className={`counter-btn ${adults <= 1 ? 'counter-btn--disabled' : ''}`}
-                  onClick={() => decrement(onUpdateAdults, adults, 1)}
-                  disabled={adults <= 1}
+                  className={`counter-btn ${adults <= 0 ? 'counter-btn--disabled' : ''}`}
+                  onClick={() => decrement(onUpdateAdults, adults, 0)}
+                  disabled={adults <= 0}
                   type="button"
                 >
                   <Image src="/img/svg/Minus.svg" alt="Minus" width={20} height={20} />
@@ -85,7 +85,7 @@ export default function FlightPassengerDropdown({
             <div className="guest-counter-item">
               <div className="guest-counter-info">
                 <p className="lg lg--medium">Children</p>
-                <p className="sm sm--regular" style={{ color: '#9e9e9e' }}>Age 2-17</p>
+                <p className="bs bs--regular">Age 2 - 17</p>
               </div>
               <div className="guest-counter-controls">
                 <button
@@ -111,7 +111,7 @@ export default function FlightPassengerDropdown({
             <div className="guest-counter-item">
               <div className="guest-counter-info">
                 <p className="lg lg--medium">Baby</p>
-                <p className="sm sm--regular" style={{ color: '#9e9e9e' }}>Under 2 yo</p>
+                <p className="bs bs--regular">Under 2 y.o</p>
               </div>
               <div className="guest-counter-controls">
                 <button

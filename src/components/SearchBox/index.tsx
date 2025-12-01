@@ -3,7 +3,7 @@
 
 import HotelSearch from './Hotel/HotelSearch';
 import FlightSearch from './Flight/FlightSearch';
-import TransferSearch from './TransferSearch';
+import TransferSearch from './Book Transfer/TransferSearch';
 
 interface SearchBoxProps {
   type: 'hotel' | 'flight' | 'transfer';

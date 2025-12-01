@@ -28,7 +28,7 @@ export default function FlightSearch() {
   const [cabinClass, setCabinClass] = useState<'economy' | 'premium-economy' | 'business' | 'first'>('economy');
   const [showPassengerDropdown, setShowPassengerDropdown] = useState(false);
 
-  // Refs (dipisah)
+  // Refs
   const fromRef = useRef<HTMLDivElement>(null);
   const toRef = useRef<HTMLDivElement>(null);
   const departureRef = useRef<HTMLDivElement>(null);
@@ -50,7 +50,7 @@ export default function FlightSearch() {
         setShowToDropdown(false);
       }
 
-      // Date (cek dua ref sekaligus)
+      // Date (check both refs)
       const isClickInsideDate =
         (departureRef.current && departureRef.current.contains(target)) ||
         (returnRef.current && returnRef.current.contains(target)) ||
@@ -231,12 +231,13 @@ export default function FlightSearch() {
             {departureDate ? formatDate(departureDate) : 'Departure'}
           </p>
 
-          {showDateDropdown && datePickerType === 'departure' && (
+          {/* Shared DatePicker Dropdown */}
+          {showDateDropdown && (
             <FlightDatePickerDropdown
               flightType={flightType}
               departureDate={departureDate}
               returnDate={returnDate}
-              datePickerType="departure"
+              datePickerType={datePickerType}
               onSelectDeparture={(date) => {
                 setDepartureDate(date);
                 if (flightType === 'one-way') {
@@ -245,7 +246,10 @@ export default function FlightSearch() {
                   setDatePickerType('return');
                 }
               }}
-              onSelectReturn={(date) => setReturnDate(date)}
+              onSelectReturn={(date) => {
+                setReturnDate(date);
+                setTimeout(() => setShowDateDropdown(false), 300);
+              }}
             />
           )}
         </div>
@@ -267,27 +271,13 @@ export default function FlightSearch() {
             >
               {returnDate ? formatDate(returnDate) : 'Return'}
             </p>
-
-            {showDateDropdown && datePickerType === 'return' && (
-              <FlightDatePickerDropdown
-                flightType={flightType}
-                departureDate={departureDate}
-                returnDate={returnDate}
-                datePickerType="return"
-                onSelectDeparture={(date) => setDepartureDate(date)}
-                onSelectReturn={(date) => {
-                  setReturnDate(date);
-                  setTimeout(() => setShowDateDropdown(false), 300);
-                }}
-              />
-            )}
           </div>
         )}
 
         {/* Passenger & Class Selector */}
         <div className="search-item-wrapper search-item--dropdown" ref={passengerRef}>
           <div
-            className="search-item-wrapper"
+            className="search-item-wrapper search-item-wrapper-container"
             onClick={() => {
               setShowPassengerDropdown(!showPassengerDropdown);
               setShowFromDropdown(false);
