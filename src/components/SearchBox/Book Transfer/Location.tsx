@@ -9,11 +9,10 @@ interface LocationDropdownProps {
 }
 
 const popularDestinations = [
-  { name: 'Jeddah, Saudi Arabia', area: 'King Abdulaziz International Airport' },
-  { name: 'Madinah, Saudi Arabia', area: 'Prince Mohammad Bin Abdulaziz Airport' },
-  { name: 'Riyadh, Saudi Arabia', area: 'King Khalid International Airport' },
-  { name: 'Makkah, Saudi Arabia', area: 'Near King Abdulaziz International Airport' },
-  { name: 'Taif, Saudi Arabia', area: 'Taif Regional Airport' },
+  { name: 'Clarion Hotel Jeddah Airport', area: 'Jeddah, Makkah, Saudi Arabia' },
+  { name: 'Movenpick Hotel Jeddah', area: 'Jeddah, Makkah, Saudi Arabia' },
+  { name: 'Mena Airport Hotel Jeddah', area: 'Jeddah, Makkah, Saudi Arabia' },
+  { name: 'Karam Jeddah Hotel', area: 'Jeddah, Makkah, Saudi Arabia' },
 ];
 
 export default function LocationDropdown({ searchQuery, onSelect }: LocationDropdownProps) {
@@ -24,9 +23,11 @@ export default function LocationDropdown({ searchQuery, onSelect }: LocationDrop
 
   return (
     <div className="search-dropdown">
-      <div className="search-dropdown-header">
-        <p className="xl xl--bold">Popular Destination</p>
-      </div>
+      {!searchQuery && (
+        <div className="search-dropdown-header">
+          <p className="xl xl--bold">Popular Destination</p>
+        </div>
+      )}
 
       <div className="search-dropdown-list">
         {filteredDestinations.length > 0 ? (

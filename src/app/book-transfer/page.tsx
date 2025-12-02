@@ -1,19 +1,19 @@
-// src/app/book-transfer/page.tsx
-import { Metadata } from 'next';
+'use client';
+
 import Image from 'next/image';
+import { useState } from 'react';
 import Tabs from '@/components/Tabs';
-import SearchBox from '@/components/SearchBox';
+import TransferSearch from '@/components/SearchBox/Book Transfer/TransferSearch';
 import Banner from '@/components/Banner';
 import CarBrand from '@/components/CarBrand';
 import PopularDestination from '@/components/PopularDestination';
 import InspirationTrip from '@/components/InspirationTrip';
 
-export const metadata: Metadata = {
-  title: 'Goforumrah',
-  description: 'Find your best ride for your travel',
-};
 
 export default function BookTransferPage() {
+
+  const [transferType, setTransferType] = useState<'same-location' | 'different-location'>('same-location');
+
   return (
     <>
       {/* Header Section */}
@@ -30,10 +30,16 @@ export default function BookTransferPage() {
         </div>
         
         {/* Search Box */}
-        <SearchBox type="transfer" />
+        <div className="search max-container padding-container">
+          <div className="search-box">
+            <TransferSearch onTransferTypeChange={setTransferType} />
+          </div>
+        </div>
         
         {/* Driver Age Checkbox */}
-        <div className="driver-age-wrapper max-container padding-container">
+        <div className={`driver-age-wrapper max-container padding-container ${
+          transferType === 'different-location' ? 'driver-age-wrapper--different-location' : ''
+        }`}>
           <div className="driver-age-checkbox">
             <label className="driver-age-checkbox-form">
               <input 
@@ -67,6 +73,7 @@ export default function BookTransferPage() {
           linkText="Learn more"
           linkHref="#"
           variant="book-transfer"
+          transferType={transferType}
         />
 
         {/* Car Brands Section */}

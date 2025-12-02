@@ -6,8 +6,17 @@ import { useState, useRef, useEffect } from 'react';
 import LocationDropdown from './Location';
 import DatePickerDropdown from './DatePicker';
 
-export default function TransferSearch() {
+interface TransferSearchProps {
+  onTransferTypeChange?: (type: 'same-location' | 'different-location') => void;
+}
+
+export default function TransferSearch({ onTransferTypeChange }: TransferSearchProps) {
   const [transferType, setTransferType] = useState<'same-location' | 'different-location'>('same-location');
+
+  const handleTransferTypeChange = (type: 'same-location' | 'different-location') => {
+    setTransferType(type);
+    onTransferTypeChange?.(type);
+  };
   
   // Location states
   const [pickupLocation, setPickupLocation] = useState('');
@@ -82,7 +91,7 @@ export default function TransferSearch() {
             name="transfer-type"
             value="same-location"
             checked={transferType === 'same-location'}
-            onChange={(e) => setTransferType(e.target.value as 'same-location')}
+            onChange={(e) => handleTransferTypeChange(e.target.value as 'same-location')}
           />
           <span className="flight-type-indicator"></span>
           <span className="bs bs--medium">Return to same location</span>
@@ -93,7 +102,7 @@ export default function TransferSearch() {
             name="transfer-type"
             value="different-location"
             checked={transferType === 'different-location'}
-            onChange={(e) => setTransferType(e.target.value as 'different-location')}
+            onChange={(e) => handleTransferTypeChange(e.target.value as 'different-location')}
           />
           <span className="flight-type-indicator"></span>
           <span className="bs bs--medium">Return to different location</span>

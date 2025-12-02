@@ -27,6 +27,20 @@
             padding: 470px 0 48px 0;
         }
 
+        &--different-location {
+
+            @include respond(screen-xl) {
+                padding: 470px 0 48px 0;
+            }
+
+            @include respond(screen-md) {
+                padding: 520px 0 48px 0;
+            }
+
+            @include respond(screen-xs) {
+                padding: 560px 0 48px 0;
+            }
+        }
     }
 
     &__content {

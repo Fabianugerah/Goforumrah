@@ -9,18 +9,25 @@ interface BannerProps {
   linkText?: string;
   linkHref?: string;
   variant?: 'default' | 'book-transfer';
+  transferType?: 'same-location' | 'different-location';
 }
 
-export default function Banner({ 
-  icon, 
-  title, 
-  description, 
+export default function Banner({
+  icon,
+  title,
+  description,
   linkText = 'Learn more',
   linkHref = '#',
-  variant = 'default'
+  variant = 'default',
+  transferType
 }: BannerProps) {
+
+  const isDifferentLocation = transferType === 'different-location';
+
   return (
-    <section className={`banner ${variant === 'book-transfer' ? 'banner--book-transfer' : ''}`}>
+    <section className={` banner ${variant === 'book-transfer' ? 'banner--book-transfer' : ''}
+      ${variant === 'book-transfer' && isDifferentLocation ? 'banner--book-transfer--different-location' : ''}
+      `}>
       <div className="banner__content">
         <div className="banner__content-icon">
           <Image src={icon} alt="Banner Icon" width={32} height={32} />
