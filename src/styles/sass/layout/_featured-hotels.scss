@@ -17,6 +17,19 @@
             width: 100%;
             border-bottom: 1px solid $color-separator;
 
+            @include respond(screen-md) {
+                justify-content: flex-start;
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
             &-menu {
                 @include flexCenter;
                 color: $color-navi-01;
@@ -26,18 +39,18 @@
                 width: 137px;
                 padding: 16px;
                 gap: 8px;
+                white-space: nowrap;
+                flex-shrink: 0;
                 cursor: pointer;
+
+                @include respond(screen-md) {
+                    width: 33.333%;
+                }
 
                 &--active {
                     color: $color-toscha-01;
                     border-bottom: 2px solid $color-toscha-01;
                     gap: 10px;
-                }
-            }
-
-            @include respond(screen-sm) {
-                &-menu:nth-child(n + 4) {
-                    display: none;
                 }
             }
         }
