@@ -25,11 +25,13 @@ export default function DestinationDropdown({ searchQuery, onSelect }: Destinati
 
   return (
     <div className="search-dropdown">
-      <div className="search-dropdown-header">
-        <p className="xl xl--bold">Popular Destination</p>
-      </div>
+      {!searchQuery && (
+        <div className="search-dropdown-header">
+          <p className="xl xl--bold">Popular Destination</p>
+        </div>
+      )}
 
-      <div className="search-dropdown-list">
+      <div className={`search-dropdown-list ${searchQuery ? 'search-dropdown-list--no-header' : ''}`}>
         {filteredDestinations.length > 0 ? (
           filteredDestinations.map((dest, index) => (
             <div

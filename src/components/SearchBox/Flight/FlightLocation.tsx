@@ -31,7 +31,7 @@ export default function FlightLocationDropdown({ searchQuery, onSelect }: Flight
         </div>
       )}
 
-      <div className="search-dropdown-list">
+      <div className={`search-dropdown-list ${searchQuery ? 'search-dropdown-list--no-header' : ''}`}>
         {filteredDestinations.length > 0 ? (
           filteredDestinations.map((dest, index) => (
             <div

@@ -88,7 +88,7 @@
         border: 1px solid $color-input;
         position: relative;
         flex-shrink: 0;
-        transition: all 0.2s ease;
+        transition: $transition;
 
         &:hover {
             border-color: $color-toscha-01;
@@ -105,7 +105,7 @@
             border-width: 0 2px 2px 0;
             transform: rotate(45deg) scale(0);
             opacity: 0;
-            transition: all 0.2s ease;
+            transition: $transition;
         }
     }
 

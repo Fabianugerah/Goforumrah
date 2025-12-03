@@ -83,6 +83,13 @@
 .search-dropdown-list {
   display: flex;
   flex-direction: column;
+
+  &--no-header {
+    .search-dropdown-item:first-of-type {
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+  }
 }
 
 .search-dropdown-item {
@@ -94,7 +101,7 @@
   border-bottom: 1px solid $color-separator;
   color: $color-primary;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: $transition;
   text-align: left;
   width: 100%;
 
@@ -184,7 +191,7 @@
     padding: 4px;
     cursor: pointer;
     border-radius: 4px;
-    transition: all 0.2s ease;
+    transition: $transition;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,7 +237,7 @@
   font-size: 1.6rem;
   font-weight: 500;
   color: $color-primary;
-  transition: all 0.2s ease;
+  transition: $transition;
   position: relative;
   z-index: 2;
   padding: 7px 10px;
@@ -331,7 +338,7 @@
   justify-content: center;
   text-align: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: $transition;
   background-color: $color-toscha-01;
 
   &:hover:not(&--disabled):not(:disabled) {
@@ -379,7 +386,7 @@
   border-bottom: 1px solid $color-separator;
   color: $color-primary;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: $transition;
 
   &:hover {
     background-color: $color-light;

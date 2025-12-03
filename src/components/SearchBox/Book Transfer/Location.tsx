@@ -29,7 +29,7 @@ export default function LocationDropdown({ searchQuery, onSelect }: LocationDrop
         </div>
       )}
 
-      <div className="search-dropdown-list">
+      <div className={`search-dropdown-list ${searchQuery ? 'search-dropdown-list--no-header' : ''}`}>
         {filteredDestinations.length > 0 ? (
           filteredDestinations.map((dest, index) => (
             <div
@@ -37,7 +37,7 @@ export default function LocationDropdown({ searchQuery, onSelect }: LocationDrop
               className="search-dropdown-item"
               onClick={() => onSelect(dest.name)}
             >
-              <Image src="/img/svg/MapPin_subtle.svg" alt="Location" width={20} height={20} />
+              <Image src="/img/svg/MapPin_search.svg" alt="Location" width={20} height={20} />
               <div className="search-dropdown-item-text">
                 <p className="bs bs--medium">{dest.name}</p>
                 <p className="sm sm--regular">{dest.area}</p>

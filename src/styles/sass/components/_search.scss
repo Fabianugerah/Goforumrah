@@ -54,6 +54,7 @@
             .search-item {
                 flex: 2 1;
                 align-items: center;
+                padding-right: 8px;
 
                 &:is(:first-child) {
                     border-right: none !important;
@@ -103,11 +104,11 @@
             @include respond(screen-xl) {
                 width: 100%;
                 border-bottom: 1px solid $color-separator;
-                padding: 6px;
+                padding: 4px;
             }
 
             @include respond(screen-sm) {
-                padding: 6px 2px;
+                padding: 4px 0;
             }
 
             &-container {
@@ -248,7 +249,7 @@
 
         span {
             color: $color-primary;
-            transition: all 0.3s ease;
+            transition: $transition;
         }
     }
 
@@ -260,7 +261,7 @@
         border-radius: 50%;
         position: relative;
         flex-shrink: 0;
-        transition: all 0.3s ease;
+        transition: $transition;
 
         &:hover {
             border: 1px solid $color-toscha-01;
@@ -276,7 +277,7 @@
             border-radius: 50%;
             opacity: 0;
             transform: scale(0);
-            transition: all 0.3s ease;
+            transition: $transition;
         }
     }
 }

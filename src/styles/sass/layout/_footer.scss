@@ -78,7 +78,7 @@
                 a {
                     color: $color-light;
                     text-decoration: none;
-                    transition: all .2s ease;
+                    transition: $transition;
 
                     &:hover {
                         color: $color-toscha-01;
@@ -167,7 +167,7 @@
                 border-radius: 40px;
                 border: none;
                 background-color: $color-navi-02;
-                transition: all .2s ease;
+                transition: $transition;
                 cursor: pointer;
 
                 &:hover{

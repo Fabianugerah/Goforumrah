@@ -28,7 +28,7 @@
         background-color: transparent;
         color: $color-primary;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: $transition;
 
         @include respond(screen-xs) {
             padding: 8px 16px;

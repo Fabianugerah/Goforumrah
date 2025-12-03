@@ -1,7 +1,7 @@
 .btn-link {
     text-decoration: none;
     color: $color-toscha-01;
-    transition: all .2s ease;
+    transition: $transition;
 
     &:hover {
         color: $color-toscha-02;
@@ -12,7 +12,7 @@
     background-color: $color-toscha-01;
     border: none;
     color: $color-white;
-    transition: all .2s ease;
+    transition: $transition;
     cursor: pointer;
 
     &:hover {
